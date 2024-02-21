@@ -32,6 +32,11 @@ void Bot::makeMoves()
 	state.bug << "turn " << state.turn << ":" << endl;
 	state.bug << state << endl;
 
+	for (Location hill : state.myHills)
+	{
+		orders->insert({ hill, Location(-1,-1)});
+	}
+
 	orders->clear();
 
 	map<Location, Location> foodTargets = map<Location, Location>();
@@ -51,23 +56,44 @@ void Bot::makeMoves()
 	std::sort(foodRoutes.begin(), foodRoutes.end());
 	for (Route& route : foodRoutes) {
 		if (foodTargets.count(route.getEnd()) == 0
-			&& !locationContainsValue(foodTargets, route.getStart())
+			&& !mapContainsValue(foodTargets, route.getStart())
 			&& doMoveLocation(route.getStart(), route.getEnd())) {
 			foodTargets[route.getEnd()] = route.getStart();
+		}
+	}
+
+	for (Location hill : state.myHills)
+	{
+		if (antOnLocation(state.myAnts, hill) && !mapContainsValue(*orders, hill))
+		{
+			for (int d = 0; d < TDIRECTIONS; d++)
+			{
+				//We check if we have an ant at the new location
+				if (!state.doesContainsAnt(state.getLocation(hill, d)) && doMoveDirection(hill, d))
+				{
+					break;
+				}
+			}
 		}
 	}
 
 	state.bug << "time taken: " << state.timer.getTime() << "ms" << endl << endl;
 };
 
-bool Bot::locationContainsValue(map<Location, Location> loc, Location value)
+bool Bot::mapContainsValue(map<Location, Location> loc, Location value)
 {
 	for (const auto &pair: loc)
 	{ 
-		if (pair.second == value)
-		{
-			return true;
-		}
+		if (pair.second == value) return true;
+	}
+	return false;
+}
+
+bool Bot::antOnLocation(vector<Location> ants, Location hill)
+{
+	for (Location ant : ants)
+	{
+		if (ant == hill) return true;
 	}
 	return false;
 }

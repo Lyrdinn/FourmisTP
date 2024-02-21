@@ -56,6 +56,11 @@ double State::distance(const Location &loc1, const Location &loc2)
     return sqrt(dr*dr + dc*dc);
 };
 
+bool State::doesContainsAnt(const Location& loc)
+{
+    return (grid[loc.row][loc.col].ant >= 0);
+}
+
 //returns the new location from moving in a given direction with the edges wrapped
 Location State::getLocation(const Location &loc, int direction)
 {
