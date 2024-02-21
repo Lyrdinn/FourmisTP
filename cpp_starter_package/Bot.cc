@@ -32,23 +32,63 @@ void Bot::makeMoves()
 	state.bug << "turn " << state.turn << ":" << endl;
 	state.bug << state << endl;
 
+	//We clear all our orders and sort our ants by location
 	orders->clear();
+	vector<Location> sortedAnts = state.myAnts;
+
+	//If we haven't initialized our unseen tiles yet we add all the Locations
+	if (unseenTiles->size() == 0)
+	{
+		for (int row = 0; row < state.rows; row++)
+		{
+			for (int col = 0; col < state.cols; col++)
+			{
+				unseenTiles->insert(Location(row, col));
+			}
+		}
+	}
+
+	//We remove every tiles we can see in the map
+	set<Location>::iterator it;
+	for (it = unseenTiles->begin(); it != unseenTiles -> end(); ++it)
+	{
+		if (state.grid[it->row][it->col].isVisible)
+		{
+			it = unseenTiles->erase(it);
+		}
+	}
 
 	//We add our hills to our orders so that our ants don't go there.
 	for (Location hill : state.myHills)
 	{
-		orders->insert({ hill, Location(-1,-1)});
+		orders->insert({ hill, Location(-1,-1) });
 	}
 
+	//We Search for food
+	searchFood(sortedAnts);
+
+	//We explore other areas
+	explore(sortedAnts);
+
+	//We check for each of our hills if we currently have an ant stepping on it so we can move it further
+	getOutOfHills();
+
+	state.bug << "time taken: " << state.timer.getTime() << "ms" << endl << endl;
+};
+
+//We tell each of our ants to go to the closest food visible
+void Bot::searchFood(vector<Location> sortedAnts)
+{
 	map<Location, Location> foodTargets = map<Location, Location>();
 	vector<Route> foodRoutes;
 	vector<Location> sortedFood = state.food;
-	vector<Location> sortedAnts = state.myAnts;
 
 	//For each location that contains food and for each of our ants we check which one is closest
 	//and create a route
-	for (Location foodLoc : sortedFood) {
-		for (Location antLoc : sortedAnts) {
+	for (Location foodLoc : sortedFood)
+	{
+		for (Location antLoc : sortedAnts)
+		{
 			int distance = state.distance(antLoc, foodLoc);
 			Route route(antLoc, foodLoc, distance);
 			foodRoutes.push_back(route);
@@ -60,12 +100,47 @@ void Bot::makeMoves()
 	for (Route& route : foodRoutes) {
 		if (foodTargets.count(route.getEnd()) == 0
 			&& !mapContainsValue(foodTargets, route.getStart())
-			&& doMoveLocation(route.getStart(), route.getEnd())) {
+			&& doMoveLocation(route.getStart(), route.getEnd()))
+		{
 			foodTargets[route.getEnd()] = route.getStart();
 		}
 	}
+}
 
-	//Checks for each of our hills if we currently have an ant stepping on it so we can move it
+//Our ants will explore unseen tiles in the map
+void Bot::explore(vector<Location> sortedAnts)
+{
+	for (Location antLoc : sortedAnts)
+	{
+		//if we don't have orders for this ant yet we create unseen routes
+		if (!mapContainsValue(*orders, antLoc))
+		{
+			vector<Route> unseenRoute = vector<Route>();
+
+			set<Location>::iterator unseenLoc;
+			//For each of the unseen locations in our map we create a route
+			for (unseenLoc = unseenTiles->begin(); unseenLoc != unseenTiles->end(); ++unseenLoc)
+			{
+				int distance = state.distance(antLoc, *unseenLoc);
+				Route route = Route(antLoc, *unseenLoc, distance);
+				unseenRoute.push_back(route);
+			}
+
+			//We sort the route by the shortest one to explore the most nearby place
+			std::sort(unseenRoute.begin(), unseenRoute.end());
+			for (Route route : unseenRoute)
+			{
+				if (doMoveLocation(route.getStart(), route.getEnd()))
+				{
+					break;
+				}
+			}
+		}
+	}
+}
+
+void Bot::getOutOfHills()
+{
 	for (Location hill : state.myHills)
 	{
 		if (state.doesContainsAnt(hill) && !mapContainsValue(*orders, hill))
@@ -80,9 +155,7 @@ void Bot::makeMoves()
 			}
 		}
 	}
-
-	state.bug << "time taken: " << state.timer.getTime() << "ms" << endl << endl;
-};
+}
 
 //returns true if our map does contain the location value
 bool Bot::mapContainsValue(map<Location, Location> loc, Location value)
