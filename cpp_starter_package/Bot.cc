@@ -67,6 +67,9 @@ void Bot::makeMoves()
 	//We Search for food
 	searchFood(sortedAnts);
 
+	//We attack the enemy ants if we see them
+	attackEnemy(sortedAnts);
+
 	//We explore other areas
 	explore(sortedAnts);
 
@@ -107,6 +110,40 @@ void Bot::searchFood(vector<Location> sortedAnts)
 	}
 }
 
+void Bot::attackEnemy(vector<Location> sortedAnts)
+{
+	//We add all of the enemy hills to
+	for (Location enemyHill : state.enemyHills)
+	{
+		if (enemyTiles->count(enemyHill) == 0)
+		{
+			enemyTiles->insert(enemyHill);
+		}
+	}
+
+	vector<Route> hillRoutes = vector<Route>();
+	for (Location hillLoc : *enemyTiles)
+	{
+		//We grab each of our ant and make them attack the colony
+		for (Location antLoc : sortedAnts)
+		{
+			if (!mapContainsValue(*orders, antLoc))
+			{
+				int distance = state.distance(antLoc, hillLoc);
+				Route route = Route(antLoc, hillLoc, distance);
+				hillRoutes.push_back(route);
+			}
+		}
+	}
+
+	//We move each of our ants
+	std::sort(hillRoutes.begin(), hillRoutes.end());
+	for (Route route : hillRoutes)
+	{
+		doMoveLocation(route.getStart(), route.getEnd());
+	}
+}
+
 //Our ants will explore unseen tiles in the map
 void Bot::explore(vector<Location> sortedAnts)
 {
@@ -115,20 +152,20 @@ void Bot::explore(vector<Location> sortedAnts)
 		//if we don't have orders for this ant yet we create unseen routes
 		if (!mapContainsValue(*orders, antLoc))
 		{
-			vector<Route> unseenRoute = vector<Route>();
+			vector<Route> unseenRoutes = vector<Route>();
 
 			set<Location>::iterator unseenLoc;
 			//For each of the unseen locations in our map we create a route
-			for (unseenLoc = unseenTiles->begin(); unseenLoc != unseenTiles->end(); ++unseenLoc)
+			for (unseenLoc = unseenTiles->begin(); unseenLoc != unseenTiles->end(); unseenLoc++)
 			{
 				int distance = state.distance(antLoc, *unseenLoc);
 				Route route = Route(antLoc, *unseenLoc, distance);
-				unseenRoute.push_back(route);
+				unseenRoutes.push_back(route);
 			}
 
 			//We sort the route by the shortest one to explore the most nearby place
-			std::sort(unseenRoute.begin(), unseenRoute.end());
-			for (Route route : unseenRoute)
+			std::sort(unseenRoutes.begin(), unseenRoutes.end());
+			for (Route route : unseenRoutes)
 			{
 				if (doMoveLocation(route.getStart(), route.getEnd()))
 				{

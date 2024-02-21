@@ -16,6 +16,7 @@ struct Bot
     State state;
     std::map<Location, Location>* orders = new std::map<Location, Location>();
     std::set<Location>* unseenTiles = new std::set<Location>(); //TODO : replace with bigger zones unseen
+    std::set<Location>* enemyTiles = new std::set<Location>();
 
     Bot();
 
@@ -23,6 +24,7 @@ struct Bot
     bool doMoveDirection(const Location& antLoc, int direction);
     bool doMoveLocation(const Location& antLoc, const Location& newLoc);
     void searchFood(std::vector<Location> sortedAnts);
+    void attackEnemy(std::vector<Location> sortedAnts);
     void explore(std::vector<Location> sortedAnts);
     void getOutOfHills();
     bool mapContainsValue(std::map<Location, Location> locations, Location value);
