@@ -56,6 +56,7 @@ double State::distance(const Location &loc1, const Location &loc2)
     return sqrt(dr*dr + dc*dc);
 };
 
+//returns true if there is an ant at this position
 bool State::doesContainsAnt(const Location& loc)
 {
     return (grid[loc.row][loc.col].ant >= 0);
@@ -68,6 +69,7 @@ Location State::getLocation(const Location &loc, int direction)
                      (loc.col + DIRECTIONS[direction][1] + cols) % cols );
 };
 
+//returns the 2 directions or 1 needed to go from startloc to endloc
 vector<int> State::getDirections(const Location& startLoc, const Location& endLoc)
 {
     vector<int> directions;
@@ -75,49 +77,25 @@ vector<int> State::getDirections(const Location& startLoc, const Location& endLo
 
     if (startLoc.row < endLoc.row)
     {
-        if (endLoc.row - startLoc.row >= rows / 2)
-        {
-            directions.push_back(0);
-        }
-        else
-        {
-            directions.push_back(2);
-        }
+        if (endLoc.row - startLoc.row >= rows / 2) directions.push_back(0);
+        else directions.push_back(2);
     }
 
     else if (startLoc.row > endLoc.row)
     {
-        if (startLoc.row - endLoc.row >= rows / 2)
-        {
-            directions.push_back(2);
-        }
-        else
-        {
-            directions.push_back(0);
-        }
+        if (startLoc.row - endLoc.row >= rows / 2)  directions.push_back(2);
+        else directions.push_back(0);
     }
 
     if (startLoc.col < endLoc.col)
     {
-        if (endLoc.col - startLoc.col >= cols / 2)
-        {
-            directions.push_back(3);
-        }
-        else
-        {
-            directions.push_back(1);
-        }
+        if (endLoc.col - startLoc.col >= cols / 2) directions.push_back(3);
+        else directions.push_back(1);
     }
     else if (startLoc.col > endLoc.col)
     {
-        if (startLoc.col - endLoc.col >= cols / 2)
-        {
-            directions.push_back(1);
-        }
-        else
-        {
-            directions.push_back(3);
-        }
+        if (startLoc.col - endLoc.col >= cols / 2)  directions.push_back(1);
+        else directions.push_back(3);
     }
 
     return directions;

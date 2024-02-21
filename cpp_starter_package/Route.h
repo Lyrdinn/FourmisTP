@@ -18,6 +18,7 @@ public :
 
 	int compareTo(Route route);
 
+	//redefining the operators so that we can compare and sort easily
 	inline bool operator==(const Route& r) const { return (start == r.start && end == r.end); }
 	inline bool operator!=(const Route& r) const { return (start != r.start || end != r.end); }
 	inline bool operator<(const Route& r) const { return (distance < r.distance); }

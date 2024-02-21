@@ -32,19 +32,21 @@ void Bot::makeMoves()
 	state.bug << "turn " << state.turn << ":" << endl;
 	state.bug << state << endl;
 
+	orders->clear();
+
+	//We add our hills to our orders so that our ants don't go there.
 	for (Location hill : state.myHills)
 	{
 		orders->insert({ hill, Location(-1,-1)});
 	}
 
-	orders->clear();
-
 	map<Location, Location> foodTargets = map<Location, Location>();
-
 	vector<Route> foodRoutes;
 	vector<Location> sortedFood = state.food;
 	vector<Location> sortedAnts = state.myAnts;
 
+	//For each location that contains food and for each of our ants we check which one is closest
+	//and create a route
 	for (Location foodLoc : sortedFood) {
 		for (Location antLoc : sortedAnts) {
 			int distance = state.distance(antLoc, foodLoc);
@@ -53,6 +55,7 @@ void Bot::makeMoves()
 		}
 	}
 
+	//We sort our routes by the distance and move our ants according to the shortest routes
 	std::sort(foodRoutes.begin(), foodRoutes.end());
 	for (Route& route : foodRoutes) {
 		if (foodTargets.count(route.getEnd()) == 0
@@ -62,13 +65,14 @@ void Bot::makeMoves()
 		}
 	}
 
+	//Checks for each of our hills if we currently have an ant stepping on it so we can move it
 	for (Location hill : state.myHills)
 	{
-		if (antOnLocation(state.myAnts, hill) && !mapContainsValue(*orders, hill))
+		if (state.doesContainsAnt(hill) && !mapContainsValue(*orders, hill))
 		{
 			for (int d = 0; d < TDIRECTIONS; d++)
 			{
-				//We check if we have an ant at the new location
+				//We check if we have an ant at the new location and if not we can move
 				if (!state.doesContainsAnt(state.getLocation(hill, d)) && doMoveDirection(hill, d))
 				{
 					break;
@@ -80,6 +84,7 @@ void Bot::makeMoves()
 	state.bug << "time taken: " << state.timer.getTime() << "ms" << endl << endl;
 };
 
+//returns true if our map does contain the location value
 bool Bot::mapContainsValue(map<Location, Location> loc, Location value)
 {
 	for (const auto &pair: loc)
@@ -89,15 +94,7 @@ bool Bot::mapContainsValue(map<Location, Location> loc, Location value)
 	return false;
 }
 
-bool Bot::antOnLocation(vector<Location> ants, Location hill)
-{
-	for (Location ant : ants)
-	{
-		if (ant == hill) return true;
-	}
-	return false;
-}
-
+//if there isn't an ant that was already at the direction we move there and return true
 bool Bot::doMoveDirection(const Location& antLoc, int direction) {
 	Location newLoc = state.getLocation(antLoc, direction);
 
@@ -110,6 +107,7 @@ bool Bot::doMoveDirection(const Location& antLoc, int direction) {
 	return false;
 }
 
+//moves an ant at a specified location
 bool Bot::doMoveLocation(const Location& antLoc, const Location& newLoc)
 {
 	vector<int> directions = state.getDirections(antLoc, newLoc);

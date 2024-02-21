@@ -1,5 +1,5 @@
 ﻿  Bot.cc
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(50,17): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-  State.cc
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(52,17): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+  MyBot.cc
   Génération de code en cours...
   Fourmis.vcxproj -> C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\x64\Debug\Fourmis.exe
