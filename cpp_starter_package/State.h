@@ -59,6 +59,7 @@ struct State
 
     double distance(const Location &loc1, const Location &loc2);
     Location getLocation(const Location &startLoc, int direction);
+    std::vector<int> getDirections(const Location& startLoc, const Location& endLoc);
 
     void updateVisionInformation();
 };

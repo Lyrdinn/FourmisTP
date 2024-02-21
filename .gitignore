@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+cpp_starter_package/.vs/Fourmis/v17/Browse.VC.db-shm
+cpp_starter_package/.vs/Fourmis/v17/Browse.VC.db-wal
+cpp_starter_package/.vs/Fourmis/v17/Browse.VC.opendb

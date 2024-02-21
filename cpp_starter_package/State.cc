@@ -63,6 +63,61 @@ Location State::getLocation(const Location &loc, int direction)
                      (loc.col + DIRECTIONS[direction][1] + cols) % cols );
 };
 
+vector<int> State::getDirections(const Location& startLoc, const Location& endLoc)
+{
+    vector<int> directions;
+    //{'N', 'E', 'S', 'W'};
+
+    if (startLoc.row < endLoc.row)
+    {
+        if (endLoc.row - startLoc.row >= rows / 2)
+        {
+            directions.push_back(0);
+        }
+        else
+        {
+            directions.push_back(2);
+        }
+    }
+
+    else if (startLoc.row > endLoc.row)
+    {
+        if (startLoc.row - endLoc.row >= rows / 2)
+        {
+            directions.push_back(2);
+        }
+        else
+        {
+            directions.push_back(0);
+        }
+    }
+
+    if (startLoc.col < endLoc.col)
+    {
+        if (endLoc.col - startLoc.col >= cols / 2)
+        {
+            directions.push_back(3);
+        }
+        else
+        {
+            directions.push_back(1);
+        }
+    }
+    else if (startLoc.col > endLoc.col)
+    {
+        if (startLoc.col - endLoc.col >= cols / 2)
+        {
+            directions.push_back(1);
+        }
+        else
+        {
+            directions.push_back(3);
+        }
+    }
+
+    return directions;
+}
+
 /*
     This function will update update the lastSeen value for any squares currently
     visible by one of your live ants.
