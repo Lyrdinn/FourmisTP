@@ -25,6 +25,9 @@ struct Bot
     bool doMoveLocation(const Location& antLoc, const Location& newLoc);
     void searchFood(std::vector<Location> sortedAnts);
     void attackEnemy(std::vector<Location> sortedAnts);
+    void attackFormation(std::vector<Location> sortedAnts);
+    void defenseFormation(std::vector<Location> sortedAnts, const Location& lignBeg, const Location& lignEnd);
+    std::vector<Location> getAllLocationsBetween(int x0, int x1, int y0, int y1);
     void explore(std::vector<Location> sortedAnts);
     void getOutOfHills();
     bool mapContainsValue(std::map<Location, Location> locations, Location value);
