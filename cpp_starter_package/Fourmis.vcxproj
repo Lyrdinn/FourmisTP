@@ -121,12 +121,14 @@
   <ItemGroup>
     <ClCompile Include="Bot.cc" />
     <ClCompile Include="MyBot.cc" />
+    <ClCompile Include="Route.cpp" />
     <ClCompile Include="State.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bot.h" />
     <ClInclude Include="Bug.h" />
     <ClInclude Include="Location.h" />
+    <ClInclude Include="Route.h" />
     <ClInclude Include="Square.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Timer.h" />
