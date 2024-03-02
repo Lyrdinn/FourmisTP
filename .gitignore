@@ -37,3 +37,12 @@ cpp_starter_package/.vs/Fourmis/v17/Browse.VC.opendb
 *.vsidx
 *.db
 *.ipch
+*.tlog
+*.html
+*.replay
+*.stream
+*.ipch
+*.db
+*.idb
+*.pdb
+*.tlog
