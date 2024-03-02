@@ -46,3 +46,10 @@ cpp_starter_package/.vs/Fourmis/v17/Browse.VC.opendb
 *.idb
 *.pdb
 *.tlog
+cpp_starter_package/.vs/Fourmis/v17/.suo
+cpp_starter_package/.vs/Fourmis/v17/Browse.VC.db
+*.pdb
+*.log
+*.ilk
+*.pdb
+*.idb

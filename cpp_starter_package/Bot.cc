@@ -50,11 +50,15 @@ void Bot::makeMoves()
 
 	//We remove every tiles we can see in the map
 	set<Location>::iterator it;
-	for (it = unseenTiles->begin(); it != unseenTiles -> end(); ++it)
+	for (it = unseenTiles->begin(); it != unseenTiles -> end();)
 	{
 		if (state.grid[it->row][it->col].isVisible)
 		{
 			it = unseenTiles->erase(it);
+		}
+		else
+		{
+			++it;
 		}
 	}
 
@@ -64,8 +68,9 @@ void Bot::makeMoves()
 		orders->insert({ hill, Location(-1,-1) });
 	}
 
-	if (state.myAnts.size() >= 7)
+	if (state.myAnts.size() >= 10)
 	{
+		//We assign ants to defend our base
 		defenseFormation(sortedAnts, Location(6, 71), Location(12, 75));
 	}
 
@@ -221,6 +226,7 @@ vector<Location> Bot::getAllLocationsBetween(int x0, int x1, int y0, int y1)
 		}	
 	}
 
+	locations.push_back(Location(y1, x1));
 	return locations;
 }
 
