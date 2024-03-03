@@ -7,5 +7,24 @@
 #include <array>
 #include <vector>
 #include <set>
+#include <limits>
+
+struct Node
+{
+    int y;
+    int x;
+    int parentX;
+    int parentY;
+    float gCost;
+    float hCost;
+    float fCost;
+
+    // We need to overload the "<" operator to put our struct into a set
+    inline bool operator < (const Node& node) const
+    {
+        return fCost < node.fCost || (fCost == node.fCost && hCost < node.hCost);
+    }
+ 
+};
 
 #endif

@@ -2,23 +2,6 @@
 
 using namespace std;
 
-struct Node
-{
-	int y;
-    int x;
-    int parentX;
-    int parentY;
-    float gCost;
-    float hCost; 
-    float fCost;
-
-	// We need to overload the "<" operator to put our struct into a set
-	inline bool operator < (const Node &node)
-	{
-    	return fCost < node.fCost;
-	}
-};
-
 
 // -------------------------------------- A-star methods --------------------------------------
 
@@ -73,18 +56,20 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 
 	// The map of nodes already evaluated
 	// Map : know immediately if a node is already evaluated or not
-	bool closed[state.rows][state.cols];
+	int rows = state.rows;
+	int cols = state.cols;
 
-	Node map[state.rows][state.cols];
+	vector<vector<bool>> closed(rows, vector<bool>(cols));
+	vector<vector<Node>> map(rows, vector<Node>(cols));
 
 	// Initialize all nodes
-	for (int x = 0; x < state.rows; x++) 
+	for (int x = 0; x < rows; x++)
 	{
-		for (int y = 0; y < state.cols; y++) 
+		for (int y = 0; y < cols; y++)
 		{
-			map[x][y].fCost = numeric_limits<float>::max();
-			map[x][y].gCost = numeric_limits<float>::max();
-			map[x][y].hCost = numeric_limits<float>::max();
+			map[x][y].fCost = FLT_MAX;
+			map[x][y].gCost = FLT_MAX;
+			map[x][y].hCost = FLT_MAX;
 			map[x][y].parentX = -1;
 			map[x][y].parentY = -1;
 			map[x][y].x = x;
@@ -129,10 +114,10 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 		}
 
 		vector<Node> neighbours;
-		Node east = map[(current.x + 1 + state.rows) % state.rows][current.y];
-		Node west = map[(current.x - 1 + state.rows) % state.rows][current.y];
-		Node north = map[current.x][(current.y + 1 + state.cols) % state.cols];
-		Node south = map[current.x][(current.y - 1 + state.cols) % state.cols];
+		Node east = map[(current.x + 1 + rows) % rows][current.y];
+		Node west = map[(current.x - 1 + rows) % rows][current.y];
+		Node north = map[current.x][(current.y + 1 + cols) % cols];
+		Node south = map[current.x][(current.y - 1 + cols) % cols];
 		neighbours.push_back(east);
 		neighbours.push_back(west);
 		neighbours.push_back(north);
@@ -147,7 +132,7 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 			}
 
 			// If new path to neighbour is shorter or neighbour is not in open
-			if (current.gCost + 1 < neighbour.gCost || neighbour.fCost == numeric_limits<float>::max())
+			if (current.gCost + 1 < neighbour.gCost || neighbour.fCost == FLT_MAX)
 			{
 				open.erase(neighbour);
 				neighbour.gCost = current.gCost + 1;
