@@ -4,6 +4,7 @@
 #include "State.h"
 #include "Location.h"
 #include "Route.h"
+#include "AStar.h"
 #include <map>
 #include <vector>
 #include <set>

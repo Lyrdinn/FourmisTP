@@ -303,19 +303,19 @@ bool Bot::doMoveDirection(const Location& antLoc, int direction) {
 	return false;
 }
 
-//moves an ant at a specified location
-bool Bot::doMoveLocation(const Location& antLoc, const Location& newLoc)
-{
-	vector<int> directions = state.getDirections(antLoc, newLoc);
-	for (int d : directions)
-	{
-		if (doMoveDirection(antLoc, d))
-		{
-			return true;
-		}
-	}
-	return false;
-}
+// //moves an ant at a specified location
+// bool Bot::doMoveLocation(const Location& antLoc, const Location& newLoc)
+// {
+// 	vector<int> directions = state.getDirections(antLoc, newLoc);
+// 	for (int d : directions)
+// 	{
+// 		if (doMoveDirection(antLoc, d))
+// 		{
+// 			return true;
+// 		}
+// 	}
+// 	return false;
+// }
 
 //finishes the turn
 void Bot::endTurn()
