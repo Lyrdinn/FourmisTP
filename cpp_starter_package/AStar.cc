@@ -67,9 +67,9 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 	{
 		for (int y = 0; y < cols; y++)
 		{
-			map[x][y].fCost = FLT_MAX;
-			map[x][y].gCost = FLT_MAX;
-			map[x][y].hCost = FLT_MAX;
+			map[x][y].fCost = (std::numeric_limits<float>::max)();
+			map[x][y].gCost = (std::numeric_limits<float>::max)();
+			map[x][y].hCost = (std::numeric_limits<float>::max)();
 			map[x][y].parentX = -1;
 			map[x][y].parentY = -1;
 			map[x][y].x = x;
@@ -132,7 +132,7 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 			}
 
 			// If new path to neighbour is shorter or neighbour is not in open
-			if (current.gCost + 1 < neighbour.gCost || neighbour.fCost == FLT_MAX)
+			if (current.gCost + 1 < neighbour.gCost || neighbour.fCost == (std::numeric_limits<float>::max)())
 			{
 				open.erase(neighbour);
 				neighbour.gCost = current.gCost + 1;
