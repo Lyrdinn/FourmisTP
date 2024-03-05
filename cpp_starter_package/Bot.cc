@@ -50,11 +50,15 @@ void Bot::makeMoves()
 
 	//We remove every tiles we can see in the map
 	set<Location>::iterator it;
-	for (it = unseenTiles->begin(); it != unseenTiles -> end(); ++it)
+	for (it = unseenTiles->begin(); it != unseenTiles -> end();)
 	{
 		if (state.grid[it->row][it->col].isVisible)
 		{
 			it = unseenTiles->erase(it);
+		}
+		else
+		{
+			++it;
 		}
 	}
 
@@ -62,6 +66,12 @@ void Bot::makeMoves()
 	for (Location hill : state.myHills)
 	{
 		orders->insert({ hill, Location(-1,-1) });
+	}
+
+	if (state.myAnts.size() >= 10)
+	{
+		//We assign ants to defend our base
+		defenseFormation(sortedAnts, Location(6, 71), Location(12, 75));
 	}
 
 	//We Search for food
@@ -142,6 +152,82 @@ void Bot::attackEnemy(vector<Location> sortedAnts)
 	{
 		doMoveLocation(route.getStart(), route.getEnd());
 	}
+}
+
+void Bot::attackFormation(std::vector<Location> sortedAnts)
+{
+	
+}
+
+void Bot::defenseFormation(std::vector<Location> sortedAnts, const Location& lignBeg, const Location& lignEnd)
+{
+	map<Location, Location> defenseTarget = map<Location, Location>();
+	vector<Location> locations = getAllLocationsBetween(lignBeg.col, lignEnd.col, lignBeg.row, lignEnd.row);
+	vector<Route> defenseRoute;
+
+	//For each of our defense location and for each of our ants we check which one is closest
+	//and create a route
+	for (Location defLoc : locations)
+	{
+		for (Location antLoc : sortedAnts)
+		{
+			int distance = state.distance(antLoc, defLoc);
+			Route route(antLoc, defLoc, distance);
+			defenseRoute.push_back(route);
+		}
+	}
+
+	//We sort our routes by the distance and move our ants according to the shortest routes
+	std::sort(defenseRoute.begin(), defenseRoute.end());
+	for (Route& route : defenseRoute) {
+		if (defenseTarget.count(route.getEnd()) == 0
+			&& !mapContainsValue(defenseTarget, route.getStart())
+			&& doMoveLocation(route.getStart(), route.getEnd()))
+		{
+			defenseTarget[route.getEnd()] = route.getStart();
+		}
+	}
+}
+
+//Uses Bresenham' algorithm to calculate each locations between two points
+//https://en.wikipedia.org/wiki/Bresenham's_line_algorithm
+vector<Location> Bot::getAllLocationsBetween(int x0, int x1, int y0, int y1)
+{
+	vector<Location> locations;
+
+	//We calculate or slope values for our line
+	int dx = abs(x1 - x0);
+	int dy = abs(y1 - y0);
+
+	//We try to find the sign to figure out where in each diagonal directions our line is going
+	int sx = x0 < x1 ? 1 : -1;
+	int sy = y0 < y1 ? 1 : -1;
+
+	int e = dx - dy;
+
+	while (x0 != x1 && y0 != y1)
+	{
+		locations.push_back(Location(y0, x0));
+		int e2 = 2 * e;
+
+		//Compares to the real lign it's vertical distance
+		if (e2 > -dy)
+		{
+			if (x0 == x1) break;
+			e -= dy;
+			x0 += sx;
+		}
+		//Compares to the real lign it's horizontal distance
+		if (e2 < dx)
+		{
+			if (y0 == y1) break;
+			e += dx;
+			y0 += sy;
+		}	
+	}
+
+	locations.push_back(Location(y1, x1));
+	return locations;
 }
 
 //Our ants will explore unseen tiles in the map
