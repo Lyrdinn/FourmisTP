@@ -4,7 +4,7 @@
 #include <fstream>
 
 #ifndef DEBUG
-    //#define DEBUG
+//#define DEBUG
 #endif
 
 /*
@@ -20,7 +20,7 @@
 */
 struct Bug
 {
-    std::ofstream file;
+    std::ofstream _file;
 
     Bug()
     {
@@ -28,41 +28,41 @@ struct Bug
     };
 
     //opens the specified file
-    inline void open(const std::string &filename)
+    inline void open(const std::string& filename)
     {
-        #ifdef DEBUG
-            file.open(filename.c_str());
-        #endif
+#ifdef DEBUG
+        _file.open(filename.c_str());
+#endif
     };
 
     //closes the ofstream
     inline void close()
     {
-        #ifdef DEBUG
-            file.close();
-        #endif
+#ifdef DEBUG
+        _file.close();
+#endif
     };
 };
 
 //output function for endl
-inline Bug& operator<<(Bug &bug, std::ostream& (*manipulator)(std::ostream&))
+inline Bug& operator<<(Bug& _bug, std::ostream& (*manipulator)(std::ostream&))
 {
-    #ifdef DEBUG
-        bug.file << manipulator;
-    #endif
+#ifdef DEBUG
+    _bug._file << manipulator;
+#endif
 
-    return bug;
+    return _bug;
 };
 
 //output function
 template <class T>
-inline Bug& operator<<(Bug &bug, const T &t)
+inline Bug& operator<<(Bug& _bug, const T& t)
 {
-    #ifdef DEBUG
-        bug.file << t;
-    #endif
+#ifdef DEBUG
+    _bug._file << t;
+#endif
 
-    return bug;
+    return _bug;
 };
 
 #endif //BUG_H_

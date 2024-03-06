@@ -101,6 +101,18 @@ vector<int> State::getDirections(const Location& startLoc, const Location& endLo
     return directions;
 }
 
+//Returns a list of neighbors tiles of a location
+vector<Location> State::getNeighbors(const Location& loc)
+{
+    vector<Location> neighbors;
+    for (int d = 0; d < 4; d++)
+    {
+        Location l = getLocation(loc, d);
+        neighbors.push_back(l);
+    }
+    return neighbors;
+}
+
 /*
     This function will update update the lastSeen value for any squares currently
     visible by one of your live ants.

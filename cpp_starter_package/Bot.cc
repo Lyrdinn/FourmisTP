@@ -68,23 +68,26 @@ void Bot::makeMoves()
 		orders->insert({ hill, Location(-1,-1) });
 	}
 
-	if (state.myAnts.size() >= 10)
+	if (state.myAnts.size() >= 6)
 	{
 		//We assign ants to defend our base
-		defenseFormation(sortedAnts, Location(6, 71), Location(12, 75));
+		defenseFormation(sortedAnts, state.myHills.front(), 6);
 	}
 
-	//We Search for food
-	searchFood(sortedAnts);
+	else
+	{
+		//We Search for food
+		searchFood(sortedAnts);
 
-	//We attack the enemy ants if we see them
-	attackEnemy(sortedAnts);
+		//We attack the enemy ants if we see them
+		attackEnemy(sortedAnts);
 
-	//We explore other areas
-	explore(sortedAnts);
+		//We explore other areas
+		explore(sortedAnts);
 
-	//We check for each of our hills if we currently have an ant stepping on it so we can move it further
-	getOutOfHills();
+		//We check for each of our hills if we currently have an ant stepping on it so we can move it further
+		getOutOfHills();
+	}
 
 	state.bug << "time taken: " << state.timer.getTime() << "ms" << endl << endl;
 };
@@ -159,22 +162,37 @@ void Bot::attackFormation(std::vector<Location> sortedAnts)
 	
 }
 
-void Bot::defenseFormation(std::vector<Location> sortedAnts, const Location& lignBeg, const Location& lignEnd)
+void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int antLimit)
 {
 	map<Location, Location> defenseTarget = map<Location, Location>();
-	vector<Location> locations = getAllLocationsBetween(lignBeg.col, lignEnd.col, lignBeg.row, lignEnd.row);
-	vector<Route> defenseRoute;
+	set<Location> locations = calculateDefensePositions(myHill, 6);
 
-	//For each of our defense location and for each of our ants we check which one is closest
-	//and create a route
+	//We want to pick the best routes that are the furtest from the hill to defend and pull out a max of ants.
+	vector<Route> defRouteFromHill;
 	for (Location defLoc : locations)
 	{
+		int distance = state.distance(myHill, defLoc);
+		Route route(myHill, defLoc, distance);
+		defRouteFromHill.push_back(route);
+	}
+	std::sort(defRouteFromHill.begin(), defRouteFromHill.end());
+
+	//For each of our defense location and for each of our ants we check which one is closest
+	//and create a route. We go from the furtest routes from our hill to the closest.
+	vector<Route> defenseRoute;
+	int ilimit = 0;
+	for (std::vector<Route>::reverse_iterator it = defRouteFromHill.rbegin(); it != defRouteFromHill.rend(); ++it)
+	{
+		Location defLoc = it->getEnd();
 		for (Location antLoc : sortedAnts)
 		{
 			int distance = state.distance(antLoc, defLoc);
 			Route route(antLoc, defLoc, distance);
 			defenseRoute.push_back(route);
 		}
+
+		ilimit +=1;
+		if (ilimit == antLimit) break;
 	}
 
 	//We sort our routes by the distance and move our ants according to the shortest routes
@@ -186,6 +204,67 @@ void Bot::defenseFormation(std::vector<Location> sortedAnts, const Location& lig
 		{
 			defenseTarget[route.getEnd()] = route.getStart();
 		}
+	}
+}
+
+//Uses BFS algorithm to calculate from the hill the maximum number of ants we can place in a line
+//https://en.wikipedia.org/wiki/Breadth-first_search
+set<Location> Bot::calculateDefensePositions(Location myHill, int antLimit)
+{
+	set<Location> visited;
+	queue<Location> tilesToSearch;
+
+	tilesToSearch.push(myHill);
+	while (tilesToSearch.size() > 0)
+	{
+		Location loc = tilesToSearch.front();
+
+		state.bug << "Location : r " << loc.row << " c " << loc.col << endl;
+
+		tilesToSearch.pop();
+
+		visited.insert(loc);
+
+		//We add all the neighbors tiles not visited and valid to our queue.
+		vector<Location> neighbors = state.getNeighbors(loc);
+		for (Location nTile : neighbors)
+		{
+			//if tile not in visited)
+			if (visited.count(nTile) == 0)
+			{
+				int distance = state.distance(myHill, nTile);
+
+				//If not water, not enemy tile and distance < to our limit of ants
+				if (canAntMoveThere(nTile) && distance <= antLimit)
+				{
+					tilesToSearch.push(nTile);
+				}
+			}
+		}
+	}
+
+	return visited;
+}
+
+bool Bot::canAntMoveThere(Location loc)
+{
+	//We check if is water
+	if (state.grid[loc.row][loc.col].isWater)
+	{
+		return false;
+	}
+	else
+	{
+		//We check if there is an ant or not
+		if (state.doesContainsAnt(loc))
+		{
+			//if enemy then we can't go there (obviously)
+			if (std::find(state.enemyAnts.begin(), state.enemyAnts.end(), loc) != state.enemyAnts.end())
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 }
 
