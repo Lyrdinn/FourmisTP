@@ -11,7 +11,6 @@ bool isValid(State &state, Node &node)
 	Square square = state.grid[node.x][node.y];
 	if (square.isHill) return false;
 	if (square.isWater) return false;
-	if (square.isFood) return false;
 	if (square.ant != -1) return false;
 	return true;
 }
@@ -40,13 +39,13 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 
 	if (!isValid(state, dest)) 
 	{
-		cout << "Destination is an obstacle" << endl;
+		state.bug << "Destination is an obstacle" << endl;
 		return empty;
 	}
 
 	if (isDestination(start, dest)) 
 	{
-		cout << "You've already reached the destination" << endl;
+		state.bug << "You've already reached the destination" << endl;
 		return empty;
 	}	
 
@@ -59,8 +58,8 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 	int rows = state.rows;
 	int cols = state.cols;
 
-	vector<vector<bool>> closed(rows, vector<bool>(cols));
-	vector<vector<Node>> map(rows, vector<Node>(cols));
+	vector<vector<bool> > closed(rows, vector<bool>(cols));
+	vector<vector<Node> > map(rows, vector<Node>(cols));
 
 	// Initialize all nodes
 	for (int x = 0; x < rows; x++)
@@ -99,17 +98,23 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 		// If we reach the destination
 		if (isDestination(current, dest))
 		{
-			Node retraceNode = current;
+			vector<Node> path;
+			int x = current.x;
+			int y = current.y;
 
 			// Retrace path
-			while (!(retraceNode.parentX == start.x && retraceNode.parentY == start.y))
+			while (!(map[x][y].parentX == start.x && map[x][y].parentY == start.y))
 			{
-				retraceNode = map[retraceNode.parentX][retraceNode.parentY];
+				state.bug << "Retrace Node : " << x  << " " << y << endl;
+				x = map[x][y].parentX;
+				y = map[x][y].parentY;
 			}
 
-			// Because we are calculating the path every frame, we only need the first node
-			vector<Node> path;
-			path.push_back(retraceNode);
+			// Because we are calculating the path every frame, we only need the next node
+			Node targetNode;
+			targetNode.x = x;
+			targetNode.y = y;
+			path.push_back(targetNode);
 			return path;
 		}
 
@@ -134,18 +139,23 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 			// If new path to neighbour is shorter or neighbour is not in open
 			if (current.gCost + 1 < neighbour.gCost || neighbour.fCost == (std::numeric_limits<float>::max)())
 			{
-				open.erase(neighbour);
-				neighbour.gCost = current.gCost + 1;
-				neighbour.hCost = distance(state, neighbour, dest);
-				neighbour.fCost = neighbour.gCost + neighbour.hCost;
-				neighbour.parentX = current.x;
-				neighbour.parentY = current.y;
-				open.insert(neighbour);
+				// If is already in open, remove it temporarily
+				if (neighbour.fCost != (std::numeric_limits<float>::max)())
+				{
+					open.erase(map[neighbour.x][neighbour.y]);
+				}
+
+				map[neighbour.x][neighbour.y].gCost = current.gCost + 1;
+				map[neighbour.x][neighbour.y].hCost = distance(state, neighbour, dest);
+				map[neighbour.x][neighbour.y].fCost = neighbour.gCost + neighbour.hCost;
+				map[neighbour.x][neighbour.y].parentX = current.x;
+				map[neighbour.x][neighbour.y].parentY = current.y;
+				open.insert(map[neighbour.x][neighbour.y]);
 			}
 		}
 	}
 
-	cout << "Destination not found" << endl;
+	state.bug << "Destination not found" << endl;
 	return empty;
 }
 
@@ -160,13 +170,19 @@ bool Bot::doMoveLocation(const Location &start, const Location &dest)
 	startNode.x = start.row;
 	startNode.y = start.col;
 
+	state.bug << "Start Node :" << startNode.x << " " << startNode.y << endl;
+
 	Node destNode;
 	destNode.x = dest.row;
 	destNode.y = dest.col;
 
+	state.bug << "Dest Node :" << destNode.x << " " << destNode.y << endl;
+
 	// Get path with A-star
 	vector<Node> path = aStar(state, startNode, destNode);
 	if(path.empty()) return false;
+
+	state.bug << "Next Node :" << path[0].x << " " << path[0].y  << endl;
 
 	Location newLocation;
 	newLocation.row = path[0].x;
