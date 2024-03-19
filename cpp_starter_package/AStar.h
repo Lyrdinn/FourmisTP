@@ -15,9 +15,9 @@ struct Node
     int x;
     int parentX;
     int parentY;
-    float gCost;
-    float hCost;
-    float fCost;
+    int gCost;
+    int hCost;
+    int fCost;
 
     // We need to overload the "<" operator to put our struct into a set
     inline bool operator < (const Node& node) const

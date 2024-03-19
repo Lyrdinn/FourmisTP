@@ -22,14 +22,14 @@ bool isDestination(Node &node, Node &dest)
     return false;
 }
 
-// Returns the euclidean distance between two nodes with the edges wrapped
-double distance(State &state, const Node &node1, const Node &node2)
+// Returns the Manhattan distance between two nodes with the edges wrapped
+int distance(State &state, const Node &node1, const Node &node2)
 {
     int d1 = abs(node1.x - node2.x),
         d2 = abs(node1.y - node2.y),
         dr = min(d1, state.rows - d1),
         dc = min(d2, state.cols - d2);
-    return sqrt(dr*dr + dc*dc);
+    return dr + dc;
 };
 
 // Use A-star pathfinding to returns the shortest path from start to dest
@@ -66,9 +66,9 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 	{
 		for (int y = 0; y < cols; y++)
 		{
-			map[x][y].fCost = (std::numeric_limits<float>::max)();
-			map[x][y].gCost = (std::numeric_limits<float>::max)();
-			map[x][y].hCost = (std::numeric_limits<float>::max)();
+			map[x][y].fCost = (std::numeric_limits<int>::max)();
+			map[x][y].gCost = (std::numeric_limits<int>::max)();
+			map[x][y].hCost = (std::numeric_limits<int>::max)();
 			map[x][y].parentX = -1;
 			map[x][y].parentY = -1;
 			map[x][y].x = x;
@@ -105,9 +105,10 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 			// Retrace path
 			while (!(map[x][y].parentX == start.x && map[x][y].parentY == start.y))
 			{
-				state.bug << "Retrace Node : " << x  << " " << y << endl;
-				x = map[x][y].parentX;
-				y = map[x][y].parentY;
+				int tempX = map[x][y].parentX;
+				int tempY = map[x][y].parentY;
+				x = tempX;
+				y = tempY;
 			}
 
 			// Because we are calculating the path every frame, we only need the next node
@@ -137,17 +138,17 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 			}
 
 			// If new path to neighbour is shorter or neighbour is not in open
-			if (current.gCost + 1 < neighbour.gCost || neighbour.fCost == (std::numeric_limits<float>::max)())
+			if (current.gCost + 1 < neighbour.gCost || neighbour.fCost == (std::numeric_limits<int>::max)())
 			{
 				// If is already in open, remove it temporarily
-				if (neighbour.fCost != (std::numeric_limits<float>::max)())
+				if (neighbour.fCost != (std::numeric_limits<int>::max)())
 				{
 					open.erase(map[neighbour.x][neighbour.y]);
 				}
 
 				map[neighbour.x][neighbour.y].gCost = current.gCost + 1;
 				map[neighbour.x][neighbour.y].hCost = distance(state, neighbour, dest);
-				map[neighbour.x][neighbour.y].fCost = neighbour.gCost + neighbour.hCost;
+				map[neighbour.x][neighbour.y].fCost = map[neighbour.x][neighbour.y].gCost + map[neighbour.x][neighbour.y].hCost;
 				map[neighbour.x][neighbour.y].parentX = current.x;
 				map[neighbour.x][neighbour.y].parentY = current.y;
 				open.insert(map[neighbour.x][neighbour.y]);
