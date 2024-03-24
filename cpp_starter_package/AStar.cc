@@ -190,10 +190,21 @@ bool Bot::doMoveLocation(const Location &start, const Location &dest)
 	newLocation.col = path[0].y;
 
 	// Move ant one square
-    state.grid[newLocation.row][newLocation.col].ant = state.grid[start.row][start.col].ant;
-    state.grid[start.row][start.col].ant = -1;
+	vector<int> directions = state.getDirections(start, newLocation);
+	for (int d : directions)
+	{
+	 	if (doMoveDirection(start, d))
+	 	{
+	 		return true;
+	 	}
+	}
+	return false;
+
+    //state.grid[newLocation.row][newLocation.col].ant = state.grid[start.row][start.col].ant;
+    //state.grid[start.row][start.col].ant = -1;
+
 
 	// /!\ Check what this insert function is used for
-	orders->insert({ newLocation, start });
+	//orders->insert({ newLocation, start });
 	return true;
 }
