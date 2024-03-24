@@ -23,13 +23,14 @@ bool isDestination(Node &node, Node &dest)
 }
 
 // Returns the Manhattan distance between two nodes with the edges wrapped
-int distance(State &state, const Node &node1, const Node &node2)
+double distanceManhattan(State &state, const Node &node1, const Node &node2)
 {
-    int d1 = abs(node1.x - node2.x),
+	return state.manhattanDistance(Location(node1.x, node1.y), Location(node2.x, node2.y));
+    /*int d1 = abs(node1.x - node2.x),
         d2 = abs(node1.y - node2.y),
         dr = min(d1, state.rows - d1),
         dc = min(d2, state.cols - d2);
-    return dr + dc;
+    return dr + dc;*/
 };
 
 // Use A-star pathfinding to returns the shortest path from start to dest
@@ -147,7 +148,7 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 				}
 
 				map[neighbour.x][neighbour.y].gCost = current.gCost + 1;
-				map[neighbour.x][neighbour.y].hCost = distance(state, neighbour, dest);
+				map[neighbour.x][neighbour.y].hCost = distanceManhattan(state, neighbour, dest);
 				map[neighbour.x][neighbour.y].fCost = map[neighbour.x][neighbour.y].gCost + map[neighbour.x][neighbour.y].hCost;
 				map[neighbour.x][neighbour.y].parentX = current.x;
 				map[neighbour.x][neighbour.y].parentY = current.y;
@@ -162,6 +163,19 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 
 
 // ------------------------------------- Helper methods -------------------------------------
+
+//if there isn't an ant that was already at the direction we move there and return true
+bool Bot::doMoveDirection(const Location& antLoc, int direction) {
+	Location newLoc = state.getLocation(antLoc, direction);
+
+	if (!state.grid[newLoc.row][newLoc.col].isWater && orders->count(newLoc) == 0)
+	{
+		state.makeMove(antLoc, direction);
+		orders->insert({ newLoc, antLoc });
+		return true;
+	}
+	return false;
+}
 
 // Move an ant towards the destination
 // This method makes the connection between locations and nodes
@@ -185,9 +199,7 @@ bool Bot::doMoveLocation(const Location &start, const Location &dest)
 
 	state.bug << "Next Node :" << path[0].x << " " << path[0].y  << endl;
 
-	Location newLocation;
-	newLocation.row = path[0].x;
-	newLocation.col = path[0].y;
+	Location newLocation = Location(path[0].x, path[0].y);
 
 	// Move ant one square
 	vector<int> directions = state.getDirections(start, newLocation);
@@ -199,12 +211,4 @@ bool Bot::doMoveLocation(const Location &start, const Location &dest)
 	 	}
 	}
 	return false;
-
-    //state.grid[newLocation.row][newLocation.col].ant = state.grid[start.row][start.col].ant;
-    //state.grid[start.row][start.col].ant = -1;
-
-
-	// /!\ Check what this insert function is used for
-	//orders->insert({ newLocation, start });
-	return true;
 }

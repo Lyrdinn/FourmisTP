@@ -102,7 +102,7 @@ void Bot::searchFood(vector<Location> sortedAnts)
 	{
 		for (Location antLoc : sortedAnts)
 		{
-			int distance = state.distance(antLoc, foodLoc);
+			int distance = state.manhattanDistance(antLoc, foodLoc);
 			Route route(antLoc, foodLoc, distance);
 			foodRoutes.push_back(route);
 		}
@@ -139,7 +139,7 @@ void Bot::attackEnemy(vector<Location> sortedAnts)
 		{
 			if (!mapContainsValue(*orders, antLoc))
 			{
-				int distance = state.distance(antLoc, hillLoc);
+				int distance = state.manhattanDistance(antLoc, hillLoc);
 				Route route = Route(antLoc, hillLoc, distance);
 				hillRoutes.push_back(route);
 			}
@@ -171,7 +171,7 @@ void Bot::defenseFormation(std::vector<Location> sortedAnts, const Location& lig
 	{
 		for (Location antLoc : sortedAnts)
 		{
-			int distance = state.distance(antLoc, defLoc);
+			int distance = state.manhattanDistance(antLoc, defLoc);
 			Route route(antLoc, defLoc, distance);
 			defenseRoute.push_back(route);
 		}
@@ -244,7 +244,7 @@ void Bot::explore(vector<Location> sortedAnts)
 			//For each of the unseen locations in our map we create a route
 			for (unseenLoc = unseenTiles->begin(); unseenLoc != unseenTiles->end(); unseenLoc++)
 			{
-				int distance = state.distance(antLoc, *unseenLoc);
+				int distance = state.manhattanDistance(antLoc, *unseenLoc);
 				Route route = Route(antLoc, *unseenLoc, distance);
 				unseenRoutes.push_back(route);
 			}
@@ -289,33 +289,6 @@ bool Bot::mapContainsValue(map<Location, Location> loc, Location value)
 	}
 	return false;
 }
-
-//if there isn't an ant that was already at the direction we move there and return true
-bool Bot::doMoveDirection(const Location& antLoc, int direction) {
-	Location newLoc = state.getLocation(antLoc, direction);
-
-	if (!state.grid[newLoc.row][newLoc.col].isWater && orders -> count(newLoc) == 0)
-	{
-		state.makeMove(antLoc, direction);
-		orders->insert({ newLoc, antLoc });
-		return true;
-	}
-	return false;
-}
-
-// //moves an ant at a specified location
-// bool Bot::doMoveLocation(const Location& antLoc, const Location& newLoc)
-// {
-// 	vector<int> directions = state.getDirections(antLoc, newLoc);
-// 	for (int d : directions)
-// 	{
-// 		if (doMoveDirection(antLoc, d))
-// 		{
-// 			return true;
-// 		}
-// 	}
-// 	return false;
-// }
 
 //finishes the turn
 void Bot::endTurn()
