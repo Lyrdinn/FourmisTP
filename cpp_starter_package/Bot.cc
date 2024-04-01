@@ -15,7 +15,6 @@ void Bot::playGame()
 	cin >> state;
 	state.setup();
 	endTurn();
-
 	//continues making moves while the game is not over
 	while (cin >> state)
 	{
@@ -26,11 +25,12 @@ void Bot::playGame()
 };
 
 //makes the bots moves for the turn
-//makes the bots moves for the turn
 void Bot::makeMoves()
 {
-	state.bug << "turn " << state.turn << ":" << endl;
-	state.bug << state << endl;
+	//printf(std::to_string(state.turn).c_str());
+	//state.bug << "turn " << state.turn << ":" << endl;
+	state.bug << "turn " <<  state.turn << endl;
+	//state.bug << state << endl;
 
 	//We clear all our orders and sort our ants by location
 	orders->clear();
@@ -54,11 +54,15 @@ void Bot::makeMoves()
 	{
 		if (state.grid[it->row][it->col].isVisible)
 		{
+			state.grid[it->row][it->col].exploreValue = 0;
 			it = unseenTiles->erase(it);
 		}
 		else
 		{
+			if (state.grid[it->row][it->col].exploreValue < 10)
+				state.grid[it->row][it->col].exploreValue++;
 			++it;
+			
 		}
 	}
 
@@ -238,6 +242,10 @@ void Bot::explore(vector<Location> sortedAnts)
 		//if we don't have orders for this ant yet we create unseen routes
 		if (!mapContainsValue(*orders, antLoc))
 		{
+			doMoveLocation(antLoc, Location(antLoc.col, antLoc.row--));
+			state.bug << "antloc : " << antLoc.row << " | " << antLoc.col << endl;
+			//search all 11 far tiles and pick the one with the highest exploreValue (if none more than 0, don't move)
+
 			vector<Route> unseenRoutes = vector<Route>();
 
 			set<Location>::iterator unseenLoc;
@@ -255,12 +263,22 @@ void Bot::explore(vector<Location> sortedAnts)
 			{
 				if (doMoveLocation(route.getStart(), route.getEnd()))
 				{
+					state.bug << "route : " << route.getEnd().row << " | " << route.getEnd().col << endl;
 					break;
 				}
 			}
+
 		}
 	}
 }
+//
+//void Bot::breathFirstSearch() {
+//
+//	vector<Location> unexploredLocations = vector<Location>();
+//vector<Location> exploredLocations = vector<Location>();
+
+//unexploredLocations.push_back(antLoc);
+//}
 
 void Bot::getOutOfHills()
 {
