@@ -52,6 +52,8 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 {
 	vector<Node> empty;
 
+	if (state.timer.getTime() > 500) return empty;
+
 	if (!isValid(state, dest)) 
 	{
 		state.bug << "Destination is an obstacle" << endl;
