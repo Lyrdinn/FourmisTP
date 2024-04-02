@@ -8,11 +8,15 @@ using namespace std;
 // Check if we can move on a given node
 bool isValid(State &state, Node &node)
 {
-	Square square = state.grid[node.x][node.y];
-	if (square.isHill) return false;
-	if (square.isWater) return false;
-	if (square.ant != -1) return false;
-	return true;
+	if (node.x < state.rows && node.y < state.cols && node.x >= 0 && node.y >= 0) {
+		Square square = state.grid[node.x][node.y];
+		if (square.isHill) return false;
+		if (square.isWater) return false;
+		if (square.ant != -1) return false;
+		return true;
+	}
+	else return false;
+
 }
 
 // Check if a given node is the destination
@@ -33,6 +37,16 @@ double distanceManhattan(State &state, const Node &node1, const Node &node2)
     return dr + dc;*/
 };
 
+const int STRAIGHT_COST = 10;
+const int DIAGONAL_COST = 14;
+
+int calculateDistanceCost(const Node &a, const Node &b) {
+	int xDistance = abs(a.x - b.x);
+	int yDistance = abs(a.y - b.y);
+	int remaining = abs(xDistance - yDistance);
+	return DIAGONAL_COST * fminf(xDistance, yDistance) + STRAIGHT_COST * remaining;
+}
+
 // Use A-star pathfinding to returns the shortest path from start to dest
 vector<Node> aStar(State &state, Node &start, Node &dest)
 {
@@ -43,7 +57,6 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 		state.bug << "Destination is an obstacle" << endl;
 		return empty;
 	}
-
 	if (isDestination(start, dest)) 
 	{
 		state.bug << "You've already reached the destination" << endl;
@@ -61,6 +74,7 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 
 	vector<vector<bool> > closed(rows, vector<bool>(cols));
 	vector<vector<Node> > map(rows, vector<Node>(cols));
+
 
 	// Initialize all nodes
 	for (int x = 0; x < rows; x++)
@@ -103,6 +117,7 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 			int x = current.x;
 			int y = current.y;
 
+			int num = 0;
 			// Retrace path
 			while (!(map[x][y].parentX == start.x && map[x][y].parentY == start.y))
 			{
@@ -110,7 +125,11 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 				int tempY = map[x][y].parentY;
 				x = tempX;
 				y = tempY;
+				num++;
+				//state.bug << "cell step : " << x << "; " << y << endl; //to show all steps of path
 			}
+
+			// state.bug << "total : " << num << endl; //to show the total number of move needed to arrive to destination
 
 			// Because we are calculating the path every frame, we only need the next node
 			Node targetNode;
@@ -147,8 +166,8 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 					open.erase(map[neighbour.x][neighbour.y]);
 				}
 
-				map[neighbour.x][neighbour.y].gCost = current.gCost + 1;
-				map[neighbour.x][neighbour.y].hCost = distanceManhattan(state, neighbour, dest);
+				map[neighbour.x][neighbour.y].gCost = current.gCost + calculateDistanceCost(current, neighbour);
+				map[neighbour.x][neighbour.y].hCost = calculateDistanceCost(neighbour, dest);
 				map[neighbour.x][neighbour.y].fCost = map[neighbour.x][neighbour.y].gCost + map[neighbour.x][neighbour.y].hCost;
 				map[neighbour.x][neighbour.y].parentX = current.x;
 				map[neighbour.x][neighbour.y].parentY = current.y;
@@ -160,6 +179,7 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 	state.bug << "Destination not found" << endl;
 	return empty;
 }
+
 
 
 // ------------------------------------- Helper methods -------------------------------------
@@ -188,8 +208,8 @@ bool Bot::doMoveLocation(const Location &start, const Location &dest)
 	state.bug << "Start Node :" << startNode.x << " " << startNode.y << endl;
 
 	Node destNode;
-	destNode.x = dest.row;
-	destNode.y = dest.col;
+	destNode.x = dest.row % state.rows;
+	destNode.y = dest.col % state.cols;
 
 	state.bug << "Dest Node :" << destNode.x << " " << destNode.y << endl;
 

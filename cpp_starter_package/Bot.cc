@@ -96,6 +96,7 @@ void Bot::makeMoves()
 //We tell each of our ants to go to the closest food visible
 void Bot::searchFood(vector<Location> sortedAnts)
 {
+	state.bug << "STATE : SEARCH FOOD" << endl;
 	map<Location, Location> foodTargets = map<Location, Location>();
 	vector<Route> foodRoutes;
 	vector<Location> sortedFood = state.food;
@@ -126,6 +127,7 @@ void Bot::searchFood(vector<Location> sortedAnts)
 
 void Bot::attackEnemy(vector<Location> sortedAnts)
 {
+	state.bug << "STATE : ATTACK ENNEMY" << endl;
 	//We add all of the enemy hills to
 	for (Location enemyHill : state.enemyHills)
 	{
@@ -160,11 +162,14 @@ void Bot::attackEnemy(vector<Location> sortedAnts)
 
 void Bot::attackFormation(std::vector<Location> sortedAnts)
 {
-	
+	state.bug << "STATE : ATTACK FORMATION" << endl;
+
 }
 
 void Bot::defenseFormation(std::vector<Location> sortedAnts, const Location& lignBeg, const Location& lignEnd)
 {
+	state.bug << "STATE : DEFENSE FORMATION" << endl;
+
 	map<Location, Location> defenseTarget = map<Location, Location>();
 	vector<Location> locations = getAllLocationsBetween(lignBeg.col, lignEnd.col, lignBeg.row, lignEnd.row);
 	vector<Route> defenseRoute;
@@ -237,6 +242,8 @@ vector<Location> Bot::getAllLocationsBetween(int x0, int x1, int y0, int y1)
 //Our ants will explore unseen tiles in the map
 void Bot::explore(vector<Location> sortedAnts)
 {
+	state.bug << "STATE : EXPLORE" << endl;
+	return;
 	for (Location antLoc : sortedAnts)
 	{
 		//if we don't have orders for this ant yet we create unseen routes
