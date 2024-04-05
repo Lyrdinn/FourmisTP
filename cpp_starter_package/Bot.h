@@ -8,6 +8,7 @@
 #include <map>
 #include <vector>
 #include <set>
+#include <queue>
 
 /*
     This struct represents your bot in the game of Ants
@@ -25,7 +26,9 @@ struct Bot
     void searchFood(std::vector<Location> sortedAnts);
     void attackEnemy(std::vector<Location> sortedAnts);
     void attackFormation(std::vector<Location> sortedAnts);
-    void defenseFormation(std::vector<Location> sortedAnts, const Location& lignBeg, const Location& lignEnd);
+    void defenseFormation(std::vector<Location> sortedAnts, Location myHill, int antLimit);
+    std::set<Location> calculateDefensePositions(Location myHill, int antLimit);
+    bool canAntMoveThere(Location loc);
     std::vector<Location> getAllLocationsBetween(int x0, int x1, int y0, int y1);
     void explore(std::vector<Location> sortedAnts);
 

@@ -63,6 +63,7 @@ struct State
     bool doesContainsAnt(const Location& loc);
     Location getLocation(const Location& startLoc, int direction);
     std::vector<int> getDirections(const Location& startLoc, const Location& endLoc);
+    std::vector<Location> getNeighbors(const Location& loc);
 
     void updateVisionInformation();
 };
