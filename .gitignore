@@ -55,3 +55,15 @@ cpp_starter_package/.vs/Fourmis/v17/Browse.VC.db
 *.idb
 *.json
 *.sqlite
+*.db
+cpp_starter_package/game_logs/0.stream
+cpp_starter_package/x64/Debug/debug.txt
+cpp_starter_package/x64/Debug/Fourmis.ilk
+cpp_starter_package/x64/Debug/Fourmis.log
+cpp_starter_package/x64/Debug/Fourmis.pdb
+cpp_starter_package/x64/Debug/Fourmis.tlog/CL.command.1.tlog
+cpp_starter_package/x64/Debug/Fourmis.tlog/CL.read.1.tlog
+cpp_starter_package/x64/Debug/Fourmis.tlog/CL.write.1.tlog
+cpp_starter_package/x64/Debug/Fourmis.tlog/link.read.1.tlog
+cpp_starter_package/x64/Debug/vc143.idb
+cpp_starter_package/x64/Debug/vc143.pdb

@@ -72,10 +72,10 @@ void Bot::makeMoves()
 		orders->insert({ hill, Location(-1,-1) });
 	}
 
-	if (state.myAnts.size() >= 6)
+	if (state.myAnts.size() >= 45)
 	{
 		//We assign ants to defend our base
-		defenseFormation(sortedAnts, state.myHills.front(), 6);
+		defenseFormation(sortedAnts, state.myHills.front(), 55);
 	}
 
 	else
