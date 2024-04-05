@@ -15,7 +15,6 @@ void Bot::playGame()
 	cin >> state;
 	state.setup();
 	endTurn();
-
 	//continues making moves while the game is not over
 	while (cin >> state)
 	{
@@ -26,11 +25,12 @@ void Bot::playGame()
 };
 
 //makes the bots moves for the turn
-//makes the bots moves for the turn
 void Bot::makeMoves()
 {
-	state.bug << "turn " << state.turn << ":" << endl;
-	state.bug << state << endl;
+	//printf(std::to_string(state.turn).c_str());
+	//state.bug << "turn " << state.turn << ":" << endl;
+	state.bug << "turn " <<  state.turn << endl;
+	//state.bug << state << endl;
 
 	//We clear all our orders and sort our ants by location
 	orders->clear();
@@ -54,11 +54,15 @@ void Bot::makeMoves()
 	{
 		if (state.grid[it->row][it->col].isVisible)
 		{
+			state.grid[it->row][it->col].exploreValue = 0;
 			it = unseenTiles->erase(it);
 		}
 		else
 		{
+			if (state.grid[it->row][it->col].exploreValue < 10)
+				state.grid[it->row][it->col].exploreValue++;
 			++it;
+			
 		}
 	}
 
@@ -95,6 +99,7 @@ void Bot::makeMoves()
 //We tell each of our ants to go to the closest food visible
 void Bot::searchFood(vector<Location> sortedAnts)
 {
+	state.bug << "STATE : SEARCH FOOD" << endl;
 	map<Location, Location> foodTargets = map<Location, Location>();
 	vector<Route> foodRoutes;
 	vector<Location> sortedFood = state.food;
@@ -105,7 +110,7 @@ void Bot::searchFood(vector<Location> sortedAnts)
 	{
 		for (Location antLoc : sortedAnts)
 		{
-			int distance = state.distance(antLoc, foodLoc);
+			int distance = state.manhattanDistance(antLoc, foodLoc);
 			Route route(antLoc, foodLoc, distance);
 			foodRoutes.push_back(route);
 		}
@@ -125,6 +130,7 @@ void Bot::searchFood(vector<Location> sortedAnts)
 
 void Bot::attackEnemy(vector<Location> sortedAnts)
 {
+	state.bug << "STATE : ATTACK ENNEMY" << endl;
 	//We add all of the enemy hills to
 	for (Location enemyHill : state.enemyHills)
 	{
@@ -142,7 +148,7 @@ void Bot::attackEnemy(vector<Location> sortedAnts)
 		{
 			if (!mapContainsValue(*orders, antLoc))
 			{
-				int distance = state.distance(antLoc, hillLoc);
+				int distance = state.manhattanDistance(antLoc, hillLoc);
 				Route route = Route(antLoc, hillLoc, distance);
 				hillRoutes.push_back(route);
 			}
@@ -159,11 +165,14 @@ void Bot::attackEnemy(vector<Location> sortedAnts)
 
 void Bot::attackFormation(std::vector<Location> sortedAnts)
 {
-	
+	state.bug << "STATE : ATTACK FORMATION" << endl;
+
 }
 
 void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int antLimit)
 {
+	state.bug << "STATE : DEFENSE FORMATION" << endl;
+
 	map<Location, Location> defenseTarget = map<Location, Location>();
 	set<Location> locations = calculateDefensePositions(myHill, 6);
 
@@ -186,7 +195,7 @@ void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int ant
 		Location defLoc = it->getEnd();
 		for (Location antLoc : sortedAnts)
 		{
-			int distance = state.distance(antLoc, defLoc);
+			int distance = state.manhattanDistance(antLoc, defLoc);
 			Route route(antLoc, defLoc, distance);
 			defenseRoute.push_back(route);
 		}
@@ -312,18 +321,24 @@ vector<Location> Bot::getAllLocationsBetween(int x0, int x1, int y0, int y1)
 //Our ants will explore unseen tiles in the map
 void Bot::explore(vector<Location> sortedAnts)
 {
+	state.bug << "STATE : EXPLORE" << endl;
+	return;
 	for (Location antLoc : sortedAnts)
 	{
 		//if we don't have orders for this ant yet we create unseen routes
 		if (!mapContainsValue(*orders, antLoc))
 		{
+			doMoveLocation(antLoc, Location(antLoc.col, antLoc.row--));
+			state.bug << "antloc : " << antLoc.row << " | " << antLoc.col << endl;
+			//search all 11 far tiles and pick the one with the highest exploreValue (if none more than 0, don't move)
+
 			vector<Route> unseenRoutes = vector<Route>();
 
 			set<Location>::iterator unseenLoc;
 			//For each of the unseen locations in our map we create a route
 			for (unseenLoc = unseenTiles->begin(); unseenLoc != unseenTiles->end(); unseenLoc++)
 			{
-				int distance = state.distance(antLoc, *unseenLoc);
+				int distance = state.manhattanDistance(antLoc, *unseenLoc);
 				Route route = Route(antLoc, *unseenLoc, distance);
 				unseenRoutes.push_back(route);
 			}
@@ -334,12 +349,22 @@ void Bot::explore(vector<Location> sortedAnts)
 			{
 				if (doMoveLocation(route.getStart(), route.getEnd()))
 				{
+					state.bug << "route : " << route.getEnd().row << " | " << route.getEnd().col << endl;
 					break;
 				}
 			}
+
 		}
 	}
 }
+//
+//void Bot::breathFirstSearch() {
+//
+//	vector<Location> unexploredLocations = vector<Location>();
+//vector<Location> exploredLocations = vector<Location>();
+
+//unexploredLocations.push_back(antLoc);
+//}
 
 void Bot::getOutOfHills()
 {
@@ -365,33 +390,6 @@ bool Bot::mapContainsValue(map<Location, Location> loc, Location value)
 	for (const auto &pair: loc)
 	{ 
 		if (pair.second == value) return true;
-	}
-	return false;
-}
-
-//if there isn't an ant that was already at the direction we move there and return true
-bool Bot::doMoveDirection(const Location& antLoc, int direction) {
-	Location newLoc = state.getLocation(antLoc, direction);
-
-	if (!state.grid[newLoc.row][newLoc.col].isWater && orders -> count(newLoc) == 0)
-	{
-		state.makeMove(antLoc, direction);
-		orders->insert({ newLoc, antLoc });
-		return true;
-	}
-	return false;
-}
-
-//moves an ant at a specified location
-bool Bot::doMoveLocation(const Location& antLoc, const Location& newLoc)
-{
-	vector<int> directions = state.getDirections(antLoc, newLoc);
-	for (int d : directions)
-	{
-		if (doMoveDirection(antLoc, d))
-		{
-			return true;
-		}
 	}
 	return false;
 }

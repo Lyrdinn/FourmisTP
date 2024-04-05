@@ -56,6 +56,15 @@ double State::distance(const Location &loc1, const Location &loc2)
     return sqrt(dr*dr + dc*dc);
 };
 
+double State::manhattanDistance(const Location& loc1, const Location& loc2)
+{
+    int d1 = abs(loc1.row - loc2.row),
+        d2 = abs(loc1.col - loc2.col),
+        dr = min(d1, rows - d1),
+        dc = min(d2, cols - d2);
+    return dr + dc;
+}
+
 //returns true if there is an ant at this position
 bool State::doesContainsAnt(const Location& loc)
 {

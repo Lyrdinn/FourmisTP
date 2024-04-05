@@ -9,7 +9,7 @@
 struct Square
 {
     bool isVisible, isWater, isHill, isFood;
-    int ant, hillPlayer;
+    int ant, hillPlayer, exploreValue;
     std::vector<int> deadAnts;
 
     Square()

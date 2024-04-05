@@ -53,3 +53,5 @@ cpp_starter_package/.vs/Fourmis/v17/Browse.VC.db
 *.ilk
 *.pdb
 *.idb
+*.json
+*.sqlite

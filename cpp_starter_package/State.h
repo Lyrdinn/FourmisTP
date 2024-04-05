@@ -58,6 +58,8 @@ struct State
     void makeMove(const Location &loc, int direction);
 
     double distance(const Location& loc1, const Location& loc2);
+    double manhattanDistance(const Location& loc1, const Location& loc2);
+
     bool doesContainsAnt(const Location& loc);
     Location getLocation(const Location& startLoc, int direction);
     std::vector<int> getDirections(const Location& startLoc, const Location& endLoc);
