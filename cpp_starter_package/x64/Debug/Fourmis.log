@@ -1,18 +1,19 @@
 ﻿  AStar.cc
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(47,42): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(47,31): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(47,53): warning C4244: 'return' : conversion de 'float' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(46,42): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(46,31): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(46,53): warning C4244: 'return' : conversion de 'float' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(100,20): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
 C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(101,20): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
 C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(102,20): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(103,20): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
   Bot.cc
 C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(78,75): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
 C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(110,17): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(148,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(180,16): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(195,17): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(242,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(339,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(153,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(221,16): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(236,17): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(247,24): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(290,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(344,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
   MyBot.cc
   Génération de code en cours...
   Fourmis.vcxproj -> C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\x64\Debug\Fourmis.exe
