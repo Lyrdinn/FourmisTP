@@ -72,26 +72,23 @@ void Bot::makeMoves()
 		orders->insert({ hill, Location(-1,-1) });
 	}
 
-	if (state.myAnts.size() >= 45)
+	if (state.myAnts.size() >= 30)
 	{
 		//We assign ants to defend our base
-		defenseFormation(sortedAnts, state.myHills.front(), 55);
+		defenseFormation(sortedAnts, state.myHills.front(), state.myAnts.size() + antLimitVariable);
 	}
 
-	else
-	{
-		//We Search for food
-		searchFood(sortedAnts);
+	//We Search for food
+	searchFood(sortedAnts);
 
-		//We attack the enemy ants if we see them
-		attackEnemy(sortedAnts);
+	//We attack the enemy ants if we see them
+	attackEnemy(sortedAnts);
 
-		//We explore other areas
-		explore(sortedAnts);
+	//We explore other areas
+	explore(sortedAnts);
 
-		//We check for each of our hills if we currently have an ant stepping on it so we can move it further
-		getOutOfHills();
-	}
+	//We check for each of our hills if we currently have an ant stepping on it so we can move it further
+	getOutOfHills();
 
 	state.bug << "time taken: " << state.timer.getTime() << "ms" << endl << endl;
 };
@@ -208,6 +205,7 @@ void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int ant
 	std::sort(defenseRoute.begin(), defenseRoute.end());
 	for (Route& route : defenseRoute) {
 		if (defenseTarget.count(route.getEnd()) == 0
+			&& route.getDistance() < maxDistForBaseDefense
 			&& !mapContainsValue(defenseTarget, route.getStart())
 			&& doMoveLocation(route.getStart(), route.getEnd()))
 		{
