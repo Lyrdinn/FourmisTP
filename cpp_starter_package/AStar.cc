@@ -16,7 +16,6 @@ bool isValid(State &state, Node &node)
 		return true;
 	}
 	else return false;
-
 }
 
 // Check if a given node is the destination

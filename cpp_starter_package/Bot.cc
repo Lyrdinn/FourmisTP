@@ -322,13 +322,11 @@ vector<Location> Bot::getAllLocationsBetween(int x0, int x1, int y0, int y1)
 void Bot::explore(vector<Location> sortedAnts)
 {
 	state.bug << "STATE : EXPLORE" << endl;
-	return;
 	for (Location antLoc : sortedAnts)
 	{
 		//if we don't have orders for this ant yet we create unseen routes
 		if (!mapContainsValue(*orders, antLoc))
 		{
-			doMoveLocation(antLoc, Location(antLoc.col, antLoc.row--));
 			state.bug << "antloc : " << antLoc.row << " | " << antLoc.col << endl;
 			//search all 11 far tiles and pick the one with the highest exploreValue (if none more than 0, don't move)
 
@@ -347,6 +345,7 @@ void Bot::explore(vector<Location> sortedAnts)
 			std::sort(unseenRoutes.begin(), unseenRoutes.end());
 			for (Route route : unseenRoutes)
 			{
+				if (state.timer.getTime() > 500) break;
 				if (doMoveLocation(route.getStart(), route.getEnd()))
 				{
 					state.bug << "route : " << route.getEnd().row << " | " << route.getEnd().col << endl;
