@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 //constructor
 Bot::Bot()
 {
@@ -27,14 +28,43 @@ void Bot::playGame()
 //makes the bots moves for the turn
 void Bot::makeMoves()
 {
-	//printf(std::to_string(state.turn).c_str());
-	//state.bug << "turn " << state.turn << ":" << endl;
 	state.bug << "turn " <<  state.turn << endl;
 	//state.bug << state << endl;
 
 	//We clear all our orders and sort our ants by location
 	orders->clear();
 	vector<Location> sortedAnts = state.myAnts;
+
+
+	for (size_t i = 0; i < sortedAnts.size(); i++)
+	{
+		Location currentLoc = sortedAnts[i];
+		Ant* foundMatchingAnt = nullptr;
+		foundMatchingAnt = state.FindAntWithFutureLocation(currentLoc);
+		if (foundMatchingAnt == nullptr) { //if no ant matches for this location, add new ant
+			state.antList.push_back(new Ant(currentLoc));
+		}
+		else {
+			foundMatchingAnt->currentLocation = currentLoc; //update current ant location to the old future location
+		}
+	}
+
+	for (size_t i = 0; i < state.antList.size(); i++) //need to kill ant not found
+	{
+		bool found = false;
+		for (size_t j = 0; j < sortedAnts.size(); j++)
+		{
+			if (state.antList[i]->currentLocation == sortedAnts[j]) {
+				found = true;
+				break;
+			}
+		}
+		if (!found) {
+			state.antList.erase(state.antList.begin() + i);
+		}
+	}
+
+	state.bug << "ant number : " << state.antList.size() << endl;
 
 	//If we haven't initialized our unseen tiles yet we add all the Locations
 	if (unseenTiles->size() == 0)

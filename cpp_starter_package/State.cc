@@ -46,6 +46,31 @@ void State::makeMove(const Location &loc, int direction)
     grid[loc.row][loc.col].ant = -1;
 };
 
+Ant* State::FindAntWithLocation(const Location& loc) {
+    Ant* ant = nullptr;
+    for (size_t i = 0; i < antList.size(); i++)
+    {
+        if (antList[i]->currentLocation == loc) {
+            ant = antList[i];
+            break;
+        }
+    }
+    return ant;
+}
+
+Ant* State::FindAntWithFutureLocation(const Location& loc) {
+    Ant* ant = nullptr;
+    for (size_t i = 0; i < antList.size(); i++)
+    {
+        //bug << "row : " << antList[i]->futureLocation.row << " , col : " << antList[i]->currentLocation.col << endl;
+        if (antList[i]->futureLocation == loc) {
+            ant = antList[i];
+            break;
+        }
+    }
+    return ant;
+}
+
 //returns the euclidean distance between two locations with the edges wrapped
 double State::distance(const Location &loc1, const Location &loc2)
 {

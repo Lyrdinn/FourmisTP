@@ -119,6 +119,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ant.cpp" />
     <ClCompile Include="AStar.cc" />
     <ClCompile Include="Bot.cc" />
     <ClCompile Include="MyBot.cc" />
@@ -126,6 +127,7 @@
     <ClCompile Include="State.cc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ant.h" />
     <ClInclude Include="AStar.h" />
     <ClInclude Include="Bot.h" />
     <ClInclude Include="Bug.h" />

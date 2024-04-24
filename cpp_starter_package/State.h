@@ -15,6 +15,10 @@
 #include "Bug.h"
 #include "Square.h"
 #include "Location.h"
+#include "Ant.h"
+
+
+class Ant;
 
 /*
     constants
@@ -22,6 +26,8 @@
 const int TDIRECTIONS = 4;
 const char CDIRECTIONS[4] = {'N', 'E', 'S', 'W'};
 const int DIRECTIONS[4][2] = { {-1, 0}, {0, 1}, {1, 0}, {0, -1} };      //{N, E, S, W}
+
+class Ant;
 
 /*
     struct to store current state information
@@ -42,6 +48,7 @@ struct State
 
     std::vector<std::vector<Square> > grid;
     std::vector<Location> myAnts, enemyAnts, myHills, enemyHills, food;
+    std::vector<Ant*> antList;
 
     Timer timer;
     Bug bug;
@@ -56,7 +63,8 @@ struct State
     void reset();
 
     void makeMove(const Location &loc, int direction);
-
+    Ant* FindAntWithLocation(const Location& loc);
+    Ant* FindAntWithFutureLocation(const Location& loc);
     double distance(const Location& loc1, const Location& loc2);
     double manhattanDistance(const Location& loc1, const Location& loc2);
 
