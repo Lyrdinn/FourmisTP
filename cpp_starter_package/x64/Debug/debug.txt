@@ -3,2052 +3,2408 @@ ant number : 1
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 14ms
+time taken: 25ms
 
 turn 2
 ant number : 1
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 5ms
+time taken: 7ms
 
 turn 3
 ant number : 1
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 5ms
+time taken: 6ms
 
 turn 4
 ant number : 1
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 4ms
+time taken: 6ms
 
 turn 5
 ant number : 1
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 5ms
+time taken: 6ms
 
 turn 6
 ant number : 2
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 8ms
+time taken: 10ms
 
 turn 7
 ant number : 3
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 10ms
+time taken: 15ms
 
 turn 8
 ant number : 3
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 10ms
+time taken: 15ms
 
 turn 9
 ant number : 3
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 10ms
+time taken: 14ms
 
 turn 10
 ant number : 4
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 12ms
+time taken: 18ms
 
 turn 11
 ant number : 4
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 13ms
+time taken: 18ms
 
 turn 12
 ant number : 4
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 11ms
+time taken: 17ms
 
 turn 13
 ant number : 4
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 12ms
+time taken: 16ms
 
 turn 14
 ant number : 5
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 14ms
+time taken: 19ms
 
 turn 15
 ant number : 5
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 15ms
+time taken: 19ms
 
 turn 16
 ant number : 6
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 19ms
+time taken: 25ms
 
 turn 17
 ant number : 6
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 25ms
+time taken: 36ms
 
 turn 18
 ant number : 8
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 44ms
+time taken: 61ms
 
 turn 19
 ant number : 8
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 55ms
+time taken: 67ms
 
 turn 20
 ant number : 9
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 66ms
+time taken: 87ms
 
 turn 21
 ant number : 10
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 71ms
+time taken: 103ms
 
 turn 22
 ant number : 11
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 78ms
+time taken: 118ms
 
 turn 23
 ant number : 11
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 67ms
+time taken: 78ms
 
 turn 24
 ant number : 11
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 91ms
+time taken: 94ms
 
 turn 25
 ant number : 11
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 133ms
+time taken: 106ms
 
 turn 26
 ant number : 11
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 65ms
+time taken: 95ms
 
 turn 27
 ant number : 11
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 85ms
+time taken: 97ms
 
 turn 28
 ant number : 12
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 69ms
+time taken: 108ms
 
 turn 29
 ant number : 12
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 85ms
+time taken: 136ms
 
 turn 30
 ant number : 13
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 89ms
+time taken: 114ms
 
 turn 31
 ant number : 13
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 86ms
+time taken: 125ms
 
 turn 32
 ant number : 14
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 110ms
+time taken: 139ms
 
 turn 33
 ant number : 15
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 122ms
+time taken: 161ms
 
 turn 34
 ant number : 15
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 125ms
+time taken: 161ms
 
 turn 35
 ant number : 15
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 121ms
+time taken: 138ms
 
 turn 36
 ant number : 15
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 157ms
+time taken: 200ms
 
 turn 37
 ant number : 15
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 183ms
+time taken: 228ms
 
 turn 38
 ant number : 15
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 132ms
+time taken: 174ms
 
 turn 39
 ant number : 15
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 152ms
+time taken: 188ms
 
 turn 40
 ant number : 15
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 154ms
+time taken: 197ms
 
 turn 41
 ant number : 15
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 116ms
+time taken: 169ms
 
 turn 42
 ant number : 15
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 128ms
+time taken: 163ms
 
 turn 43
 ant number : 15
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 141ms
+time taken: 159ms
 
 turn 44
 ant number : 16
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 142ms
+time taken: 175ms
 
 turn 45
 ant number : 16
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 114ms
+time taken: 136ms
 
 turn 46
 ant number : 17
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 147ms
+time taken: 177ms
 
 turn 47
 ant number : 17
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 110ms
+time taken: 131ms
 
 turn 48
 ant number : 17
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 140ms
+time taken: 125ms
 
 turn 49
 ant number : 17
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 110ms
+time taken: 124ms
 
 turn 50
 ant number : 18
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 115ms
+time taken: 144ms
 
 turn 51
 ant number : 18
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 120ms
+time taken: 159ms
 
 turn 52
 ant number : 18
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 149ms
+time taken: 148ms
 
 turn 53
 ant number : 19
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 154ms
+time taken: 201ms
 
 turn 54
 ant number : 20
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 237ms
+time taken: 245ms
 
 turn 55
 ant number : 21
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 177ms
+time taken: 234ms
 
 turn 56
 ant number : 22
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 242ms
+time taken: 290ms
 
 turn 57
 ant number : 23
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 225ms
+time taken: 249ms
 
 turn 58
 ant number : 24
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 272ms
+time taken: 331ms
 
 turn 59
 ant number : 25
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 243ms
+time taken: 271ms
 
 turn 60
 ant number : 27
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 270ms
+time taken: 330ms
 
 turn 61
 ant number : 27
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 228ms
+time taken: 250ms
 
 turn 62
 ant number : 27
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 188ms
+time taken: 218ms
 
 turn 63
 ant number : 26
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 196ms
+time taken: 201ms
 
 turn 64
 ant number : 27
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 201ms
+time taken: 237ms
 
 turn 65
 ant number : 27
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 226ms
+time taken: 237ms
 
 turn 66
 ant number : 27
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 227ms
+time taken: 251ms
 
 turn 67
 ant number : 27
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 326ms
+time taken: 325ms
 
 turn 68
 ant number : 28
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 356ms
+time taken: 414ms
 
 turn 69
 ant number : 29
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 339ms
+time taken: 375ms
 
 turn 70
 ant number : 30
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 387ms
+time taken: 452ms
 
 turn 71
 ant number : 31
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 376ms
+time taken: 438ms
 
 turn 72
 ant number : 32
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 355ms
+time taken: 389ms
 
 turn 73
 ant number : 32
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 444ms
+time taken: 456ms
 
 turn 74
 ant number : 30
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 343ms
+time taken: 384ms
 
 turn 75
 ant number : 30
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 357ms
+time taken: 414ms
 
 turn 76
 ant number : 31
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 458ms
+time taken: 503ms
 
 turn 77
-ant number : 32
+ant number : 31
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 443ms
+time taken: 452ms
 
 turn 78
-ant number : 33
+ant number : 31
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 457ms
+time taken: 487ms
 
 turn 79
-ant number : 33
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 464ms
-
-turn 80
 ant number : 32
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 476ms
+time taken: 470ms
+
+turn 80
+ant number : 31
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 461ms
 
 turn 81
 ant number : 30
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 409ms
+time taken: 456ms
 
 turn 82
 ant number : 30
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 379ms
+time taken: 466ms
 
 turn 83
-ant number : 31
+ant number : 30
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 427ms
+time taken: 465ms
 
 turn 84
 ant number : 31
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 458ms
+time taken: 467ms
 
 turn 85
 ant number : 32
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 454ms
+time taken: 466ms
 
 turn 86
-ant number : 31
+ant number : 32
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 472ms
+time taken: 463ms
 
 turn 87
 ant number : 32
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 460ms
+time taken: 484ms
 
 turn 88
 ant number : 33
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 454ms
+time taken: 470ms
 
 turn 89
 ant number : 33
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 437ms
+time taken: 484ms
 
 turn 90
 ant number : 34
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 459ms
+time taken: 476ms
 
 turn 91
 ant number : 34
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 477ms
+time taken: 498ms
 
 turn 92
-ant number : 34
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 464ms
-
-turn 93
 ant number : 35
 STATE : DEFENSE FORMATION
-TIME : 165
+INITIALIZED DEFENSE
+TIME : 128
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 320ms
+time taken: 223ms
+
+turn 93
+ant number : 36
+STATE : DEFENSE FORMATION
+TIME : 197
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 335ms
 
 turn 94
 ant number : 36
 STATE : DEFENSE FORMATION
-TIME : 103
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 242ms
-
-turn 95
-ant number : 36
-STATE : DEFENSE FORMATION
-TIME : 466
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 499ms
-
-turn 96
-ant number : 37
-STATE : DEFENSE FORMATION
-TIME : 453
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 480ms
-
-turn 97
-ant number : 38
-STATE : DEFENSE FORMATION
-TIME : 475
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 509ms
-
-turn 98
-ant number : 38
-STATE : DEFENSE FORMATION
-TIME : 323
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 445ms
-
-turn 99
-ant number : 39
-STATE : DEFENSE FORMATION
-TIME : 481
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 519ms
-
-turn 100
-ant number : 39
-STATE : DEFENSE FORMATION
-TIME : 295
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 394ms
-
-turn 101
-ant number : 40
-STATE : DEFENSE FORMATION
-TIME : 307
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 371ms
-
-turn 102
-ant number : 40
-STATE : DEFENSE FORMATION
-TIME : 344
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 398ms
-
-turn 103
-ant number : 41
-STATE : DEFENSE FORMATION
-TIME : 456
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 518ms
-
-turn 104
-ant number : 43
-STATE : DEFENSE FORMATION
-TIME : 483
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 521ms
-
-turn 105
-ant number : 44
-STATE : DEFENSE FORMATION
-TIME : 476
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 519ms
-
-turn 106
-ant number : 43
-STATE : DEFENSE FORMATION
-TIME : 467
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 511ms
-
-turn 107
-ant number : 42
-STATE : DEFENSE FORMATION
-TIME : 129
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 259ms
-
-turn 108
-ant number : 44
-STATE : DEFENSE FORMATION
-TIME : 450
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 524ms
-
-turn 109
-ant number : 44
-STATE : DEFENSE FORMATION
-TIME : 168
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 328ms
-
-turn 110
-ant number : 46
-STATE : DEFENSE FORMATION
-TIME : 451
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 497ms
-
-turn 111
-ant number : 46
-STATE : DEFENSE FORMATION
-TIME : 480
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 525ms
-
-turn 112
-ant number : 48
-STATE : DEFENSE FORMATION
-TIME : 496
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 535ms
-
-turn 113
-ant number : 44
-STATE : DEFENSE FORMATION
-TIME : 455
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 507ms
-
-turn 114
-ant number : 46
-STATE : DEFENSE FORMATION
-TIME : 182
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 253ms
-
-turn 115
-ant number : 46
-STATE : DEFENSE FORMATION
-TIME : 94
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 164ms
-
-turn 116
-ant number : 49
-STATE : DEFENSE FORMATION
-TIME : 240
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 457ms
-
-turn 117
-ant number : 51
-STATE : DEFENSE FORMATION
-TIME : 102
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 459ms
-
-turn 118
-ant number : 51
-STATE : DEFENSE FORMATION
-TIME : 98
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 175ms
-
-turn 119
-ant number : 49
-STATE : DEFENSE FORMATION
-TIME : 358
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 442ms
-
-turn 120
-ant number : 50
-STATE : DEFENSE FORMATION
-TIME : 100
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 191ms
-
-turn 121
-ant number : 53
-STATE : DEFENSE FORMATION
-TIME : 450
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 504ms
-
-turn 122
-ant number : 53
-STATE : DEFENSE FORMATION
-TIME : 126
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 211ms
-
-turn 123
-ant number : 52
-STATE : DEFENSE FORMATION
-TIME : 284
+TIME : 287
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
 time taken: 405ms
 
-turn 124
-ant number : 53
+turn 95
+ant number : 36
+STATE : DEFENSE FORMATION
+TIME : 235
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 297ms
+
+turn 96
+ant number : 37
+STATE : DEFENSE FORMATION
+TIME : 105
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 160ms
+
+turn 97
+ant number : 38
+STATE : DEFENSE FORMATION
+TIME : 316
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 367ms
+
+turn 98
+ant number : 38
 STATE : DEFENSE FORMATION
 TIME : 194
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 461ms
+time taken: 239ms
 
-turn 125
-ant number : 52
+turn 99
+ant number : 38
 STATE : DEFENSE FORMATION
-TIME : 399
+TIME : 244
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
+time taken: 287ms
+
+turn 100
+ant number : 38
+STATE : DEFENSE FORMATION
+TIME : 108
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 159ms
+
+turn 101
+ant number : 38
+STATE : DEFENSE FORMATION
+TIME : 515
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 517ms
+
+turn 102
+ant number : 38
+STATE : DEFENSE FORMATION
+TIME : 514
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 515ms
+
+turn 103
+ant number : 38
+STATE : DEFENSE FORMATION
+TIME : 247
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 337ms
+
+turn 104
+ant number : 38
+STATE : DEFENSE FORMATION
+TIME : 117
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 176ms
+
+turn 105
+ant number : 39
+STATE : DEFENSE FORMATION
+TIME : 349
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 467ms
+
+turn 106
+ant number : 40
+STATE : DEFENSE FORMATION
+TIME : 260
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 469ms
+
+turn 107
+ant number : 41
+STATE : DEFENSE FORMATION
+TIME : 197
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 336ms
+
+turn 108
+ant number : 42
+STATE : DEFENSE FORMATION
+TIME : 145
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 270ms
+
+turn 109
+ant number : 41
+STATE : DEFENSE FORMATION
+TIME : 447
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
 time taken: 468ms
 
-turn 126
-ant number : 50
+turn 110
+ant number : 41
 STATE : DEFENSE FORMATION
-TIME : 295
+TIME : 146
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 251ms
+
+turn 111
+ant number : 40
+STATE : DEFENSE FORMATION
+TIME : 214
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 340ms
+
+turn 112
+ant number : 39
+STATE : DEFENSE FORMATION
+TIME : 103
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 201ms
+
+turn 113
+ant number : 39
+STATE : DEFENSE FORMATION
+TIME : 136
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 252ms
+
+turn 114
+ant number : 40
+STATE : DEFENSE FORMATION
+TIME : 103
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 267ms
+
+turn 115
+ant number : 41
+STATE : DEFENSE FORMATION
+TIME : 375
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 484ms
+
+turn 116
+ant number : 41
+STATE : DEFENSE FORMATION
+TIME : 279
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 376ms
+
+turn 117
+ant number : 42
+STATE : DEFENSE FORMATION
+TIME : 134
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 253ms
+
+turn 118
+ant number : 45
+STATE : DEFENSE FORMATION
+TIME : 102
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 231ms
+
+turn 119
+ant number : 43
+STATE : DEFENSE FORMATION
+TIME : 98
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 218ms
+
+turn 120
+ant number : 43
+STATE : DEFENSE FORMATION
+TIME : 92
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 189ms
+
+turn 121
+ant number : 45
+STATE : DEFENSE FORMATION
+TIME : 151
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 453ms
+
+turn 122
+ant number : 47
+STATE : DEFENSE FORMATION
+TIME : 344
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 454ms
+
+turn 123
+ant number : 47
+STATE : DEFENSE FORMATION
+TIME : 108
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 221ms
+
+turn 124
+ant number : 49
+STATE : DEFENSE FORMATION
+TIME : 111
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 225ms
+
+turn 125
+ant number : 47
+STATE : DEFENSE FORMATION
+TIME : 181
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 323ms
+
+turn 126
+ant number : 49
+STATE : DEFENSE FORMATION
+TIME : 121
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
 time taken: 459ms
 
 turn 127
-ant number : 51
+ant number : 48
 STATE : DEFENSE FORMATION
-TIME : 450
+TIME : 191
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 511ms
+time taken: 325ms
 
 turn 128
-ant number : 49
+ant number : 48
 STATE : DEFENSE FORMATION
-TIME : 95
+TIME : 113
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 464ms
+time taken: 240ms
 
 turn 129
-ant number : 49
+ant number : 47
 STATE : DEFENSE FORMATION
-TIME : 93
+TIME : 148
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 474ms
+time taken: 293ms
 
 turn 130
-ant number : 51
+ant number : 48
 STATE : DEFENSE FORMATION
-TIME : 185
+TIME : 116
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 475ms
+time taken: 346ms
 
 turn 131
-ant number : 52
+ant number : 48
 STATE : DEFENSE FORMATION
-TIME : 100
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 469ms
-
-turn 132
-ant number : 54
-STATE : DEFENSE FORMATION
-TIME : 110
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 459ms
-
-turn 133
-ant number : 52
-STATE : DEFENSE FORMATION
-TIME : 189
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 460ms
-
-turn 134
-ant number : 52
-STATE : DEFENSE FORMATION
-TIME : 165
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 465ms
-
-turn 135
-ant number : 50
-STATE : DEFENSE FORMATION
-TIME : 108
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 469ms
-
-turn 136
-ant number : 52
-STATE : DEFENSE FORMATION
-TIME : 167
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 468ms
-
-turn 137
-ant number : 54
-STATE : DEFENSE FORMATION
-TIME : 212
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 469ms
-
-turn 138
-ant number : 55
-STATE : DEFENSE FORMATION
-TIME : 121
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 456ms
-
-turn 139
-ant number : 56
-STATE : DEFENSE FORMATION
-TIME : 133
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 476ms
-
-turn 140
-ant number : 55
-STATE : DEFENSE FORMATION
-TIME : 129
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 474ms
-
-turn 141
-ant number : 56
-STATE : DEFENSE FORMATION
-TIME : 247
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 456ms
-
-turn 142
-ant number : 53
-STATE : DEFENSE FORMATION
-TIME : 159
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 459ms
-
-turn 143
-ant number : 53
-STATE : DEFENSE FORMATION
-TIME : 127
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 468ms
-
-turn 144
-ant number : 54
-STATE : DEFENSE FORMATION
-TIME : 112
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 230ms
-
-turn 145
-ant number : 55
-STATE : DEFENSE FORMATION
-TIME : 188
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 478ms
-
-turn 146
-ant number : 55
-STATE : DEFENSE FORMATION
-TIME : 184
+TIME : 122
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
 time taken: 473ms
 
-turn 147
-ant number : 58
+turn 132
+ant number : 50
 STATE : DEFENSE FORMATION
-TIME : 272
+TIME : 119
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 321ms
+
+turn 133
+ant number : 49
+STATE : DEFENSE FORMATION
+TIME : 115
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 464ms
+
+turn 134
+ant number : 49
+STATE : DEFENSE FORMATION
+TIME : 128
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 237ms
+
+turn 135
+ant number : 51
+STATE : DEFENSE FORMATION
+TIME : 113
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 474ms
+
+turn 136
+ant number : 52
+STATE : DEFENSE FORMATION
+TIME : 138
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 464ms
+
+turn 137
+ant number : 49
+STATE : DEFENSE FORMATION
+TIME : 136
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 328ms
+
+turn 138
+ant number : 49
+STATE : DEFENSE FORMATION
+TIME : 143
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 462ms
+
+turn 139
+ant number : 50
+STATE : DEFENSE FORMATION
+TIME : 201
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 415ms
+
+turn 140
+ant number : 50
+STATE : DEFENSE FORMATION
+TIME : 144
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 503ms
+
+turn 141
+ant number : 50
+STATE : DEFENSE FORMATION
+TIME : 200
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 464ms
+
+turn 142
+ant number : 54
+STATE : DEFENSE FORMATION
+TIME : 116
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 499ms
+
+turn 143
+ant number : 57
+STATE : DEFENSE FORMATION
+TIME : 123
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 464ms
+
+turn 144
+ant number : 59
+STATE : DEFENSE FORMATION
+TIME : 112
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 461ms
+
+turn 145
+ant number : 57
+STATE : DEFENSE FORMATION
+TIME : 128
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 328ms
+
+turn 146
+ant number : 54
+STATE : DEFENSE FORMATION
+TIME : 128
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 332ms
+
+turn 147
+ant number : 53
+STATE : DEFENSE FORMATION
+TIME : 142
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 464ms
+
+turn 148
+ant number : 57
+STATE : DEFENSE FORMATION
+TIME : 142
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 466ms
+
+turn 149
+ant number : 61
+STATE : DEFENSE FORMATION
+TIME : 142
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 465ms
+
+turn 150
+ant number : 64
+STATE : DEFENSE FORMATION
+TIME : 145
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
 time taken: 467ms
 
-turn 148
-ant number : 58
-STATE : DEFENSE FORMATION
-TIME : 345
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 504ms
-
-turn 149
-ant number : 57
-STATE : DEFENSE FORMATION
-TIME : 184
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 371ms
-
-turn 150
-ant number : 56
-STATE : DEFENSE FORMATION
-TIME : 120
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 478ms
-
 turn 151
-ant number : 57
+ant number : 66
 STATE : DEFENSE FORMATION
-TIME : 223
+TIME : 158
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 479ms
+time taken: 468ms
 
 turn 152
-ant number : 57
+ant number : 71
 STATE : DEFENSE FORMATION
-TIME : 415
+TIME : 122
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 483ms
+time taken: 471ms
 
 turn 153
-ant number : 57
+ant number : 77
 STATE : DEFENSE FORMATION
-TIME : 124
+TIME : 168
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 457ms
+time taken: 465ms
 
 turn 154
-ant number : 57
+ant number : 76
 STATE : DEFENSE FORMATION
-TIME : 127
+TIME : 204
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 483ms
+time taken: 475ms
 
 turn 155
-ant number : 57
+ant number : 77
 STATE : DEFENSE FORMATION
-TIME : 135
+TIME : 131
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 481ms
+time taken: 469ms
 
 turn 156
-ant number : 58
+ant number : 81
 STATE : DEFENSE FORMATION
-TIME : 130
+TIME : 162
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 457ms
+time taken: 471ms
 
 turn 157
-ant number : 56
+ant number : 80
 STATE : DEFENSE FORMATION
-TIME : 249
+TIME : 130
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
 time taken: 476ms
 
 turn 158
-ant number : 57
+ant number : 85
 STATE : DEFENSE FORMATION
-TIME : 217
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 474ms
-
-turn 159
-ant number : 58
-STATE : DEFENSE FORMATION
-TIME : 126
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 478ms
-
-turn 160
-ant number : 59
-STATE : DEFENSE FORMATION
-TIME : 131
+TIME : 141
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
 time taken: 473ms
 
-turn 161
-ant number : 61
+turn 159
+ant number : 90
 STATE : DEFENSE FORMATION
-TIME : 146
+TIME : 153
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 481ms
+
+turn 160
+ant number : 95
+STATE : DEFENSE FORMATION
+TIME : 156
 STATE : SEARCH FOOD
 STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 474ms
+time taken: 468ms
+
+turn 161
+ant number : 87
+STATE : DEFENSE FORMATION
+TIME : 136
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 472ms
 
 turn 162
-ant number : 62
+ant number : 91
+STATE : DEFENSE FORMATION
+TIME : 133
+STATE : SEARCH FOOD
+STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 487ms
+
+turn 163
+ant number : 97
 STATE : DEFENSE FORMATION
 TIME : 145
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 476ms
-
-turn 163
-ant number : 64
-STATE : DEFENSE FORMATION
-TIME : 210
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 478ms
+time taken: 504ms
 
 turn 164
-ant number : 68
+ant number : 103
 STATE : DEFENSE FORMATION
-TIME : 140
+TIME : 221
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 531ms
+time taken: 508ms
 
 turn 165
-ant number : 70
+ant number : 108
 STATE : DEFENSE FORMATION
-TIME : 130
+TIME : 144
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 530ms
+time taken: 503ms
 
 turn 166
-ant number : 72
+ant number : 107
 STATE : DEFENSE FORMATION
-TIME : 228
+TIME : 156
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 477ms
+time taken: 504ms
 
 turn 167
-ant number : 75
-STATE : DEFENSE FORMATION
-TIME : 148
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 484ms
-
-turn 168
-ant number : 81
-STATE : DEFENSE FORMATION
-TIME : 336
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 532ms
-
-turn 169
-ant number : 82
+ant number : 103
 STATE : DEFENSE FORMATION
 TIME : 158
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 478ms
+time taken: 502ms
+
+turn 168
+ant number : 108
+STATE : DEFENSE FORMATION
+TIME : 145
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 169
+ant number : 104
+STATE : DEFENSE FORMATION
+TIME : 140
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
 
 turn 170
-ant number : 86
+ant number : 103
 STATE : DEFENSE FORMATION
-TIME : 157
+TIME : 168
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 540ms
+time taken: 506ms
 
 turn 171
-ant number : 93
+ant number : 83
 STATE : DEFENSE FORMATION
-TIME : 147
+TIME : 164
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 479ms
+time taken: 522ms
 
 turn 172
-ant number : 94
+ant number : 82
 STATE : DEFENSE FORMATION
-TIME : 142
+TIME : 165
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 469ms
+time taken: 506ms
 
 turn 173
-ant number : 98
+ant number : 83
 STATE : DEFENSE FORMATION
-TIME : 154
+TIME : 167
 STATE : SEARCH FOOD
-STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 526ms
+
+turn 174
+ant number : 88
+STATE : DEFENSE FORMATION
+TIME : 217
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 175
+ant number : 78
+STATE : DEFENSE FORMATION
+TIME : 162
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 176
+ant number : 74
+STATE : DEFENSE FORMATION
+TIME : 251
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 177
+ant number : 72
+STATE : DEFENSE FORMATION
+TIME : 160
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 178
+ant number : 73
+STATE : DEFENSE FORMATION
+TIME : 161
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 505ms
+
+turn 179
+ant number : 72
+STATE : DEFENSE FORMATION
+TIME : 170
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 495ms
+
+turn 180
+ant number : 77
+STATE : DEFENSE FORMATION
+TIME : 158
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 181
+ant number : 79
+STATE : DEFENSE FORMATION
+TIME : 168
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 182
+ant number : 79
+STATE : DEFENSE FORMATION
+TIME : 497
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 183
+ant number : 75
+STATE : DEFENSE FORMATION
+TIME : 166
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 184
+ant number : 76
+STATE : DEFENSE FORMATION
+TIME : 499
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 504ms
+
+turn 185
+ant number : 72
+STATE : DEFENSE FORMATION
+TIME : 326
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 186
+ant number : 70
+STATE : DEFENSE FORMATION
+TIME : 319
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 187
+ant number : 74
+STATE : DEFENSE FORMATION
+TIME : 468
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 188
+ant number : 71
+STATE : DEFENSE FORMATION
+TIME : 516
+STATE : SEARCH FOOD
 STATE : GET OUT OF HILLS
 time taken: 523ms
 
-turn 174
-ant number : 99
-STATE : DEFENSE FORMATION
-TIME : 207
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 524ms
-
-turn 175
-ant number : 102
-STATE : DEFENSE FORMATION
-TIME : 213
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 524ms
-
-turn 176
-ant number : 106
-STATE : DEFENSE FORMATION
-TIME : 505
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 551ms
-
-turn 177
-ant number : 105
-STATE : DEFENSE FORMATION
-TIME : 268
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 524ms
-
-turn 178
-ant number : 109
-STATE : DEFENSE FORMATION
-TIME : 147
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 529ms
-
-turn 179
-ant number : 114
-STATE : DEFENSE FORMATION
-TIME : 427
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 529ms
-
-turn 180
-ant number : 117
-STATE : DEFENSE FORMATION
-TIME : 472
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 532ms
-
-turn 181
-ant number : 120
-STATE : DEFENSE FORMATION
-TIME : 469
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 531ms
-
-turn 182
-ant number : 121
-STATE : DEFENSE FORMATION
-TIME : 220
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 527ms
-
-turn 183
-ant number : 128
-STATE : DEFENSE FORMATION
-TIME : 208
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 525ms
-
-turn 184
-ant number : 132
-STATE : DEFENSE FORMATION
-TIME : 214
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 500ms
-
-turn 185
-ant number : 137
-STATE : DEFENSE FORMATION
-TIME : 460
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 533ms
-
-turn 186
-ant number : 144
-STATE : DEFENSE FORMATION
-TIME : 400
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 555ms
-
-turn 187
-ant number : 148
-STATE : DEFENSE FORMATION
-TIME : 264
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 469ms
-
-turn 188
-ant number : 150
-STATE : DEFENSE FORMATION
-TIME : 237
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 481ms
-
 turn 189
-ant number : 145
+ant number : 70
 STATE : DEFENSE FORMATION
-TIME : 337
+TIME : 466
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 530ms
+time taken: 507ms
 
 turn 190
-ant number : 149
+ant number : 71
 STATE : DEFENSE FORMATION
-TIME : 215
+TIME : 507
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 518ms
+time taken: 512ms
 
 turn 191
-ant number : 156
+ant number : 69
 STATE : DEFENSE FORMATION
-TIME : 236
+TIME : 476
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 533ms
+time taken: 507ms
 
 turn 192
-ant number : 160
+ant number : 68
 STATE : DEFENSE FORMATION
-TIME : 150
+TIME : 350
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 536ms
+time taken: 506ms
 
 turn 193
-ant number : 167
-STATE : DEFENSE FORMATION
-TIME : 276
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 534ms
-
-turn 194
-ant number : 136
-STATE : DEFENSE FORMATION
-TIME : 213
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 530ms
-
-turn 195
-ant number : 120
-STATE : DEFENSE FORMATION
-TIME : 232
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 531ms
-
-turn 196
-ant number : 120
-STATE : DEFENSE FORMATION
-TIME : 285
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 529ms
-
-turn 197
-ant number : 120
-STATE : DEFENSE FORMATION
-TIME : 225
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 490ms
-
-turn 198
-ant number : 126
-STATE : DEFENSE FORMATION
-TIME : 186
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 531ms
-
-turn 199
-ant number : 128
-STATE : DEFENSE FORMATION
-TIME : 155
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 537ms
-
-turn 200
-ant number : 132
-STATE : DEFENSE FORMATION
-TIME : 483
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 546ms
-
-turn 201
-ant number : 136
-STATE : DEFENSE FORMATION
-TIME : 501
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 553ms
-
-turn 202
-ant number : 137
-STATE : DEFENSE FORMATION
-TIME : 461
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 544ms
-
-turn 203
-ant number : 141
-STATE : DEFENSE FORMATION
-TIME : 179
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 483ms
-
-turn 204
-ant number : 146
-STATE : DEFENSE FORMATION
-TIME : 300
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 529ms
-
-turn 205
-ant number : 151
-STATE : DEFENSE FORMATION
-TIME : 255
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 528ms
-
-turn 206
-ant number : 157
-STATE : DEFENSE FORMATION
-TIME : 200
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 534ms
-
-turn 207
-ant number : 155
-STATE : DEFENSE FORMATION
-TIME : 196
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 521ms
-
-turn 208
-ant number : 156
-STATE : DEFENSE FORMATION
-TIME : 466
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 542ms
-
-turn 209
-ant number : 152
-STATE : DEFENSE FORMATION
-TIME : 462
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 545ms
-
-turn 210
-ant number : 152
-STATE : DEFENSE FORMATION
-TIME : 342
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 533ms
-
-turn 211
-ant number : 151
-STATE : DEFENSE FORMATION
-TIME : 452
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 549ms
-
-turn 212
-ant number : 152
-STATE : DEFENSE FORMATION
-TIME : 451
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 540ms
-
-turn 213
-ant number : 118
-STATE : DEFENSE FORMATION
-TIME : 450
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 538ms
-
-turn 214
-ant number : 112
-STATE : DEFENSE FORMATION
-TIME : 248
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 481ms
-
-turn 215
-ant number : 93
-STATE : DEFENSE FORMATION
-TIME : 289
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 480ms
-
-turn 216
-ant number : 96
-STATE : DEFENSE FORMATION
-TIME : 405
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 540ms
-
-turn 217
-ant number : 91
-STATE : DEFENSE FORMATION
-TIME : 450
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 545ms
-
-turn 218
-ant number : 88
-STATE : DEFENSE FORMATION
-TIME : 376
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 539ms
-
-turn 219
-ant number : 87
-STATE : DEFENSE FORMATION
-TIME : 451
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 552ms
-
-turn 220
-ant number : 87
-STATE : DEFENSE FORMATION
-TIME : 496
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 558ms
-
-turn 221
-ant number : 88
-STATE : DEFENSE FORMATION
-TIME : 451
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 565ms
-
-turn 222
-ant number : 88
-STATE : DEFENSE FORMATION
-TIME : 511
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 562ms
-
-turn 223
-ant number : 87
-STATE : DEFENSE FORMATION
-TIME : 450
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 561ms
-
-turn 224
-ant number : 88
-STATE : DEFENSE FORMATION
-TIME : 294
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 497ms
-
-turn 225
-ant number : 89
-STATE : DEFENSE FORMATION
-TIME : 460
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 579ms
-
-turn 226
-ant number : 91
-STATE : DEFENSE FORMATION
-TIME : 450
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 566ms
-
-turn 227
-ant number : 89
-STATE : DEFENSE FORMATION
-TIME : 462
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 557ms
-
-turn 228
-ant number : 88
-STATE : DEFENSE FORMATION
-TIME : 469
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 564ms
-
-turn 229
-ant number : 89
-STATE : DEFENSE FORMATION
-TIME : 466
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 579ms
-
-turn 230
-ant number : 88
+ant number : 70
 STATE : DEFENSE FORMATION
 TIME : 508
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 592ms
+time taken: 512ms
+
+turn 194
+ant number : 73
+STATE : DEFENSE FORMATION
+TIME : 461
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 195
+ant number : 76
+STATE : DEFENSE FORMATION
+TIME : 452
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 505ms
+
+turn 196
+ant number : 74
+STATE : DEFENSE FORMATION
+TIME : 451
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 197
+ant number : 75
+STATE : DEFENSE FORMATION
+TIME : 450
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 198
+ant number : 72
+STATE : DEFENSE FORMATION
+TIME : 452
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 199
+ant number : 73
+STATE : DEFENSE FORMATION
+TIME : 486
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 509ms
+
+turn 200
+ant number : 74
+STATE : DEFENSE FORMATION
+TIME : 488
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 201
+ant number : 76
+STATE : DEFENSE FORMATION
+TIME : 452
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 202
+ant number : 79
+STATE : DEFENSE FORMATION
+TIME : 503
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 203
+ant number : 79
+STATE : DEFENSE FORMATION
+TIME : 513
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 516ms
+
+turn 204
+ant number : 77
+STATE : DEFENSE FORMATION
+TIME : 509
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 513ms
+
+turn 205
+ant number : 79
+STATE : DEFENSE FORMATION
+TIME : 477
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 206
+ant number : 80
+STATE : DEFENSE FORMATION
+TIME : 458
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 505ms
+
+turn 207
+ant number : 82
+STATE : DEFENSE FORMATION
+TIME : 506
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 510ms
+
+turn 208
+ant number : 82
+STATE : DEFENSE FORMATION
+TIME : 490
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 504ms
+
+turn 209
+ant number : 85
+STATE : DEFENSE FORMATION
+TIME : 479
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 210
+ant number : 88
+STATE : DEFENSE FORMATION
+TIME : 499
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 503ms
+
+turn 211
+ant number : 88
+STATE : DEFENSE FORMATION
+TIME : 460
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 504ms
+
+turn 212
+ant number : 87
+STATE : DEFENSE FORMATION
+TIME : 501
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 213
+ant number : 89
+STATE : DEFENSE FORMATION
+TIME : 517
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 521ms
+
+turn 214
+ant number : 91
+STATE : DEFENSE FORMATION
+TIME : 454
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 215
+ant number : 90
+STATE : DEFENSE FORMATION
+TIME : 495
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 216
+ant number : 93
+STATE : DEFENSE FORMATION
+TIME : 512
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 517ms
+
+turn 217
+ant number : 96
+STATE : DEFENSE FORMATION
+TIME : 497
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 505ms
+
+turn 218
+ant number : 96
+STATE : DEFENSE FORMATION
+TIME : 488
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 219
+ant number : 98
+STATE : DEFENSE FORMATION
+TIME : 470
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 503ms
+
+turn 220
+ant number : 101
+STATE : DEFENSE FORMATION
+TIME : 520
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 523ms
+
+turn 221
+ant number : 97
+STATE : DEFENSE FORMATION
+TIME : 500
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 504ms
+
+turn 222
+ant number : 98
+STATE : DEFENSE FORMATION
+TIME : 475
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 223
+ant number : 99
+STATE : DEFENSE FORMATION
+TIME : 476
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 503ms
+
+turn 224
+ant number : 101
+STATE : DEFENSE FORMATION
+TIME : 490
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 504ms
+
+turn 225
+ant number : 103
+STATE : DEFENSE FORMATION
+TIME : 496
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 503ms
+
+turn 226
+ant number : 105
+STATE : DEFENSE FORMATION
+TIME : 449
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 505ms
+
+turn 227
+ant number : 108
+STATE : DEFENSE FORMATION
+TIME : 504
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 228
+ant number : 110
+STATE : DEFENSE FORMATION
+TIME : 451
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 229
+ant number : 106
+STATE : DEFENSE FORMATION
+TIME : 501
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 230
+ant number : 107
+STATE : DEFENSE FORMATION
+TIME : 313
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
 
 turn 231
 ant number : 89
 STATE : DEFENSE FORMATION
-TIME : 508
+TIME : 502
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 586ms
+time taken: 507ms
 
 turn 232
-ant number : 89
+ant number : 88
 STATE : DEFENSE FORMATION
-TIME : 452
+TIME : 474
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 578ms
+time taken: 506ms
 
 turn 233
-ant number : 89
+ant number : 88
 STATE : DEFENSE FORMATION
-TIME : 450
+TIME : 512
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 563ms
+time taken: 516ms
 
 turn 234
-ant number : 90
+ant number : 89
 STATE : DEFENSE FORMATION
-TIME : 463
+TIME : 451
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 577ms
+time taken: 506ms
 
 turn 235
 ant number : 90
 STATE : DEFENSE FORMATION
-TIME : 450
+TIME : 499
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 584ms
+time taken: 503ms
 
 turn 236
+ant number : 90
+STATE : DEFENSE FORMATION
+TIME : 451
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 237
+ant number : 92
+STATE : DEFENSE FORMATION
+TIME : 497
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 505ms
+
+turn 238
+ant number : 91
+STATE : DEFENSE FORMATION
+TIME : 465
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 239
+ant number : 91
+STATE : DEFENSE FORMATION
+TIME : 449
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 505ms
+
+turn 240
+ant number : 90
+STATE : DEFENSE FORMATION
+TIME : 461
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 505ms
+
+turn 241
+ant number : 90
+STATE : DEFENSE FORMATION
+TIME : 460
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 242
+ant number : 90
+STATE : DEFENSE FORMATION
+TIME : 475
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 243
+ant number : 90
+STATE : DEFENSE FORMATION
+TIME : 474
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 244
+ant number : 90
+STATE : DEFENSE FORMATION
+TIME : 494
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 245
+ant number : 90
+STATE : DEFENSE FORMATION
+TIME : 481
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 246
+ant number : 91
+STATE : DEFENSE FORMATION
+TIME : 475
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 247
+ant number : 91
+STATE : DEFENSE FORMATION
+TIME : 504
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 510ms
+
+turn 248
+ant number : 91
+STATE : DEFENSE FORMATION
+TIME : 450
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 249
+ant number : 91
+STATE : DEFENSE FORMATION
+TIME : 474
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 250
+ant number : 91
+STATE : DEFENSE FORMATION
+TIME : 494
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 251
+ant number : 92
+STATE : DEFENSE FORMATION
+TIME : 509
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 515ms
+
+turn 252
+ant number : 92
+STATE : DEFENSE FORMATION
+TIME : 462
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 253
+ant number : 93
+STATE : DEFENSE FORMATION
+TIME : 472
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 254
+ant number : 94
+STATE : DEFENSE FORMATION
+TIME : 480
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 255
+ant number : 95
+STATE : DEFENSE FORMATION
+TIME : 486
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 509ms
+
+turn 256
+ant number : 93
+STATE : DEFENSE FORMATION
+TIME : 456
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 505ms
+
+turn 257
+ant number : 93
+STATE : DEFENSE FORMATION
+TIME : 480
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 258
+ant number : 93
+STATE : DEFENSE FORMATION
+TIME : 522
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 529ms
+
+turn 259
+ant number : 93
+STATE : DEFENSE FORMATION
+TIME : 450
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 512ms
+
+turn 260
+ant number : 93
+STATE : DEFENSE FORMATION
+TIME : 452
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 513ms
+
+turn 261
+ant number : 93
+STATE : DEFENSE FORMATION
+TIME : 494
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 262
+ant number : 94
+STATE : DEFENSE FORMATION
+TIME : 510
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 517ms
+
+turn 263
+ant number : 96
+STATE : DEFENSE FORMATION
+TIME : 460
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 264
+ant number : 96
+STATE : DEFENSE FORMATION
+TIME : 512
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 518ms
+
+turn 265
+ant number : 97
+STATE : DEFENSE FORMATION
+TIME : 531
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 538ms
+
+turn 266
+ant number : 98
+STATE : DEFENSE FORMATION
+TIME : 477
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 509ms
+
+turn 267
+ant number : 99
+STATE : DEFENSE FORMATION
+TIME : 464
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 509ms
+
+turn 268
+ant number : 100
+STATE : DEFENSE FORMATION
+TIME : 448
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 269
+ant number : 101
+STATE : DEFENSE FORMATION
+TIME : 452
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 270
+ant number : 93
+STATE : DEFENSE FORMATION
+TIME : 484
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 271
+ant number : 94
+STATE : DEFENSE FORMATION
+TIME : 452
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 272
 ant number : 91
 STATE : DEFENSE FORMATION
 TIME : 451
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 575ms
+time taken: 508ms
 
-turn 237
-ant number : 90
+turn 273
+ant number : 93
 STATE : DEFENSE FORMATION
-TIME : 498
+TIME : 514
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 562ms
+time taken: 519ms
 
-turn 238
-ant number : 90
-STATE : DEFENSE FORMATION
-TIME : 507
-STATE : SEARCH FOOD
-STATE : EXPLORE
-STATE : GET OUT OF HILLS
-time taken: 574ms
-
-turn 239
+turn 274
 ant number : 88
 STATE : DEFENSE FORMATION
-TIME : 450
+TIME : 449
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 569ms
+time taken: 509ms
 
-turn 240
+turn 275
 ant number : 88
 STATE : DEFENSE FORMATION
-TIME : 346
+TIME : 275
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 546ms
+time taken: 510ms
 
-turn 241
+turn 276
+ant number : 87
+STATE : DEFENSE FORMATION
+TIME : 478
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 509ms
+
+turn 277
+ant number : 88
+STATE : DEFENSE FORMATION
+TIME : 460
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 278
+ant number : 90
+STATE : DEFENSE FORMATION
+TIME : 481
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 279
+ant number : 90
+STATE : DEFENSE FORMATION
+TIME : 432
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 280
+ant number : 92
+STATE : DEFENSE FORMATION
+TIME : 171
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 505ms
+
+turn 281
+ant number : 94
+STATE : DEFENSE FORMATION
+TIME : 154
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 282
 ant number : 89
 STATE : DEFENSE FORMATION
-TIME : 455
+TIME : 515
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 549ms
+time taken: 521ms
 
-turn 242
+turn 283
 ant number : 89
 STATE : DEFENSE FORMATION
-TIME : 499
+TIME : 148
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 605ms
+time taken: 507ms
 
-turn 243
-ant number : 89
+turn 284
+ant number : 87
 STATE : DEFENSE FORMATION
-TIME : 309
+TIME : 282
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 554ms
+time taken: 506ms
 
-turn 244
-ant number : 89
+turn 285
+ant number : 88
 STATE : DEFENSE FORMATION
-TIME : 471
+TIME : 247
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 588ms
+time taken: 510ms
 
-turn 245
-ant number : 89
+turn 286
+ant number : 88
 STATE : DEFENSE FORMATION
-TIME : 469
+TIME : 160
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 574ms
+time taken: 509ms
 
-turn 246
-ant number : 89
+turn 287
+ant number : 90
 STATE : DEFENSE FORMATION
-TIME : 483
+TIME : 463
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 621ms
+time taken: 509ms
 
-turn 247
-ant number : 89
+turn 288
+ant number : 93
 STATE : DEFENSE FORMATION
-TIME : 503
+TIME : 464
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 596ms
+time taken: 507ms
 
-turn 248
-ant number : 89
+turn 289
+ant number : 93
 STATE : DEFENSE FORMATION
-TIME : 484
+TIME : 154
 STATE : SEARCH FOOD
-STATE : EXPLORE
 STATE : GET OUT OF HILLS
-time taken: 626ms
+time taken: 507ms
 
-turn 249
-ant number : 89
+turn 290
+ant number : 96
 STATE : DEFENSE FORMATION
-TIME : 450
+TIME : 147
 STATE : SEARCH FOOD
-STATE : EXPLORE
+STATE : GET OUT OF HILLS
+time taken: 504ms
+
+turn 291
+ant number : 102
+STATE : DEFENSE FORMATION
+TIME : 159
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 292
+ant number : 106
+STATE : DEFENSE FORMATION
+TIME : 482
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 293
+ant number : 102
+STATE : DEFENSE FORMATION
+TIME : 138
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 294
+ant number : 106
+STATE : DEFENSE FORMATION
+TIME : 472
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 295
+ant number : 97
+STATE : DEFENSE FORMATION
+TIME : 144
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 506ms
+
+turn 296
+ant number : 98
+STATE : DEFENSE FORMATION
+TIME : 452
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 509ms
+
+turn 297
+ant number : 99
+STATE : DEFENSE FORMATION
+TIME : 138
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 298
+ant number : 100
+STATE : DEFENSE FORMATION
+TIME : 130
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 509ms
+
+turn 299
+ant number : 103
+STATE : DEFENSE FORMATION
+TIME : 225
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 510ms
+
+turn 300
+ant number : 106
+STATE : DEFENSE FORMATION
+TIME : 124
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 508ms
+
+turn 301
+ant number : 111
+STATE : DEFENSE FORMATION
+TIME : 269
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 510ms
+
+turn 302
+ant number : 112
+STATE : DEFENSE FORMATION
+TIME : 156
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 507ms
+
+turn 303
+ant number : 117
+STATE : DEFENSE FORMATION
+TIME : 482
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 510ms
+
+turn 304
+ant number : 119
+STATE : DEFENSE FORMATION
+TIME : 418
+STATE : SEARCH FOOD
+STATE : GET OUT OF HILLS
+time taken: 579ms
+
+turn 305
+ant number : 122
+STATE : DEFENSE FORMATION

@@ -120,6 +120,7 @@ void Bot::makeMoves()
 
 	try
 	{
+		if (state.myAnts.size() <= 100 && state.timer.getTime() < 450)
 		//We explore other areas
 		explore(sortedAnts);
 	}
@@ -251,21 +252,10 @@ vector<Location> Bot::getAllLocationsBetween(int x0, int x1, int y0, int y1)
 	return locations;
 }
 
-void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int antLimit)
+void Bot::initializeDefenseRoute(Location myHill)
 {
-	state.bug << "STATE : DEFENSE FORMATION" << endl;
-
-	float timerDefense = state.timer.getTime();
-
-	map<Location, Location> defenseTarget = map<Location, Location>();
-
-	//We stock our BFS for the defense of each of our hills so that we don't have to recalculate them
-	//every frame. We check if it exists or not
-	if (defenseLocationsPerHills->count(myHill) == 0)
-	{
-		defenseLocationsPerHills->insert({ myHill, calculateDefensePositions(myHill) });
-	}
-	set<Location> defenseLocation = defenseLocationsPerHills->at(myHill);
+	defenseLocationsPerHills.insert({ myHill, calculateDefensePositions(myHill) });
+	set<Location> defenseLocation = defenseLocationsPerHills.at(myHill);
 
 	//We want to pick the best routes that are the furtest from the hill to defend and pull out a max of ants.
 	vector<Route> defRouteFromHill;
@@ -280,20 +270,45 @@ void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int ant
 	}
 	std::sort(defRouteFromHill.begin(), defRouteFromHill.end());
 
+	defensePerHillsRoutes.insert({ myHill, defRouteFromHill });
+}
+
+void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int antLimit)
+{
+	state.bug << "STATE : DEFENSE FORMATION" << endl;
+
+	float timerDefense = state.timer.getTime();
+
+	map<Location, Location> defenseTarget = map<Location, Location>();
+
+	//We stock our BFS for the defense of each of our hills so that we don't have to recalculate them
+	//every frame. We check if it exists or not
+	if (defenseLocationsPerHills.count(myHill) == 0)
+	{
+		state.bug << "INITIALIZED DEFENSE" << endl;
+		initializeDefenseRoute(myHill);
+	}
+
+	//We want to pick the best routes that are the furtest from the hill to defend and pull out a max of ants.
+	vector<Route> defRouteFromHill = defensePerHillsRoutes.at(myHill);
+
 	//For each of our defense location and for each of our ants we check which one is closest
 	//and create a route. We go from the furtest routes from our hill to the closest.
 	vector<Route> defenseRoute;
 	int ilimit = 0;
 	for (std::vector<Route>::reverse_iterator it = defRouteFromHill.rbegin(); it != defRouteFromHill.rend(); ++it)
 	{
-		Location defLoc = it->getEnd();
-		for (Location antLoc : sortedAnts)
+		if (!state.doesContainsAnt(it->getEnd()))
 		{
-			int distance = state.manhattanDistance(antLoc, defLoc);
-			if (distance != 0)
+			Location defLoc = it->getEnd();
+			for (Location antLoc : sortedAnts)
 			{
-				Route route(antLoc, defLoc, distance);
-				defenseRoute.push_back(route);
+				int distance = state.manhattanDistance(antLoc, defLoc);
+				if (distance != 0)
+				{
+					Route route(antLoc, defLoc, distance);
+					defenseRoute.push_back(route);
+				}
 			}
 		}
 
@@ -387,6 +402,7 @@ bool Bot::canAntMoveThere(Location loc)
 //Our ants will explore unseen tiles in the map
 void Bot::explore(vector<Location> sortedAnts)
 {
+
 	state.bug << "STATE : EXPLORE" << endl;
 	for (Location antLoc : sortedAnts)
 	{
@@ -403,10 +419,11 @@ void Bot::explore(vector<Location> sortedAnts)
 			for (unseenLoc = unseenTiles->begin(); unseenLoc != unseenTiles->end(); unseenLoc++)
 			{
 				int distance = state.manhattanDistance(antLoc, *unseenLoc);
-				if (distance == 0) break;
-
-				Route route = Route(antLoc, *unseenLoc, distance);
-				unseenRoutes.push_back(route);
+				if (distance != 0)
+				{
+					Route route = Route(antLoc, *unseenLoc, distance);
+					unseenRoutes.push_back(route);
+				}
 			}
 
 			//We sort the route by the shortest one to explore the most nearby place
