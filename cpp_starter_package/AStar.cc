@@ -16,7 +16,6 @@ bool isValid(State &state, Node &node)
 		return true;
 	}
 	else return false;
-
 }
 
 // Check if a given node is the destination
@@ -225,6 +224,10 @@ bool Bot::doMoveLocation(const Location &start, const Location &dest)
 
 	// Move ant one square
 	vector<int> directions = state.getDirections(start, newLocation);
+	Ant* ant = state.FindAntWithLocation(start);
+	if (ant != nullptr) {
+		ant->futureLocation = newLocation;
+	}
 	for (int d : directions)
 	{
 	 	if (doMoveDirection(start, d))

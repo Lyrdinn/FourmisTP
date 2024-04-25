@@ -5,6 +5,7 @@
 #include "Location.h"
 #include "Route.h"
 #include "AStar.h"
+#include "Ant.h"
 #include <map>
 #include <vector>
 #include <set>
