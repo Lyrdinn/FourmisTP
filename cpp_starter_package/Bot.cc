@@ -36,6 +36,7 @@ void Bot::makeMoves()
 	orders->clear();
 	vector<Location> sortedAnts = state.myAnts;
 
+	state.timer.start();
 
 	for (size_t i = 0; i < sortedAnts.size(); i++)
 	{
@@ -308,6 +309,8 @@ void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int ant
 
 		//if we go above X percent of ants defending we break
 		if (nbAntDefending >= maxNbAntDefending) break;
+
+		if (state.timer.getTime() > 450) break;
 	}
 }
 
@@ -401,7 +404,7 @@ void Bot::explore(vector<Location> sortedAnts)
 			std::sort(unseenRoutes.begin(), unseenRoutes.end());
 			for (Route route : unseenRoutes)
 			{
-				if (state.timer.getTime() > 500) break;
+				if (state.timer.getTime() > 450) break;
 				if (doMoveLocation(route.getStart(), route.getEnd()))
 				{
 					state.bug << "route : " << route.getEnd().row << " | " << route.getEnd().col << endl;
