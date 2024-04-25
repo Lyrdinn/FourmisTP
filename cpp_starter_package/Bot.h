@@ -20,9 +20,10 @@ struct Bot
     std::map<Location, Location>* orders = new std::map<Location, Location>();
     std::set<Location>* unseenTiles = new std::set<Location>(); //TODO : replace with bigger zones unseen
     std::set<Location>* enemyTiles = new std::set<Location>();
-    const int antLimitVariable = 30;
-    const int nbAntDefendingPercent = 70;
-    const int maxColonyBordersDistance = 8;
+    std::map<Location, std::set<Location> >* defenseLocationsPerHills = new std::map<Location, std::set<Location>>();
+    const int antLimitVariable = 20;
+    const int nbAntDefendingPercent = 80;
+    const int maxColonyBordersDistance = 10;
 
     Bot();
 

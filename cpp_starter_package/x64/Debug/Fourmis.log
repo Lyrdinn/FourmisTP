@@ -6,14 +6,14 @@ C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(10
 C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(101,20): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
 C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\AStar.cc(102,20): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
   Bot.cc
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(78,75): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(110,17): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(153,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(221,16): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(236,17): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(247,24): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(290,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
-C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(344,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(109,75): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(141,17): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(183,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(263,17): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(282,17): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(296,24): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(339,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(342,47): error C2065: 'maxColonyBordersDistance' : identificateur non déclaré
+C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\Bot.cc(393,18): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
   MyBot.cc
   Génération de code en cours...
-  Fourmis.vcxproj -> C:\Users\33695\Desktop\PROGRAMMATION\C++\Fourmis\cpp_starter_package\x64\Debug\Fourmis.exe

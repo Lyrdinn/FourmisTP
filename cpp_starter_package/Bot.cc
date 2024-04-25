@@ -16,6 +16,7 @@ void Bot::playGame()
 	cin >> state;
 	state.setup();
 	endTurn();
+
 	//continues making moves while the game is not over
 	while (cin >> state)
 	{
@@ -112,7 +113,7 @@ void Bot::makeMoves()
 	searchFood(sortedAnts);
 
 	//We attack the enemy ants if we see them
-	//attackEnemy(sortedAnts);
+	//attackFormation(sortedAnts);
 
 	//We explore other areas
 	explore(sortedAnts);
@@ -138,6 +139,8 @@ void Bot::searchFood(vector<Location> sortedAnts)
 		for (Location antLoc : sortedAnts)
 		{
 			int distance = state.manhattanDistance(antLoc, foodLoc);
+			if (distance == 0) break;
+
 			Route route(antLoc, foodLoc, distance);
 			foodRoutes.push_back(route);
 		}
@@ -155,9 +158,6 @@ void Bot::searchFood(vector<Location> sortedAnts)
 	}
 }
 
-void Bot::attackEnemy(vector<Location> sortedAnts)
-{
-}
 
 void Bot::attackFormation(std::vector<Location> sortedAnts)
 {
@@ -181,8 +181,11 @@ void Bot::attackFormation(std::vector<Location> sortedAnts)
 			if (!mapContainsValue(*orders, antLoc))
 			{
 				int distance = state.manhattanDistance(antLoc, hillLoc);
-				Route route = Route(antLoc, hillLoc, distance);
-				hillRoutes.push_back(route);
+				if (distance != 0)
+				{
+					Route route = Route(antLoc, hillLoc, distance);
+					hillRoutes.push_back(route);
+				}
 			}
 		}
 	}
@@ -196,7 +199,7 @@ void Bot::attackFormation(std::vector<Location> sortedAnts)
 
 }
 
-//Uses Bresenham' algorithm to calculate each locations between two points for the attack
+//ATTACK : Uses Bresenham' algorithm to calculate each locations between two points for the attack
 //https://en.wikipedia.org/wiki/Bresenham's_line_algorithm
 vector<Location> Bot::getAllLocationsBetween(int x0, int x1, int y0, int y1)
 {
@@ -242,15 +245,28 @@ void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int ant
 	state.bug << "STATE : DEFENSE FORMATION" << endl;
 
 	map<Location, Location> defenseTarget = map<Location, Location>();
-	set<Location> locations = calculateDefensePositions(myHill);
+
+	//We stock our BFS for the defense of each of our hills so that we don't have to recalculate them
+	//every frame. We check if it exists or not
+	if (defenseLocationsPerHills->count(myHill) == 0)
+	{
+		defenseLocationsPerHills->insert({ myHill, calculateDefensePositions(myHill) });
+	}
+	set<Location> defenseLocation = defenseLocationsPerHills->at(myHill);
 
 	//We want to pick the best routes that are the furtest from the hill to defend and pull out a max of ants.
 	vector<Route> defRouteFromHill;
-	for (Location defLoc : locations)
+	for (Location defLoc : defenseLocation)
 	{
-		int distance = state.distance(myHill, defLoc);
-		Route route(myHill, defLoc, distance);
-		defRouteFromHill.push_back(route);
+		if (!state.doesContainsAnt(defLoc))
+		{
+			int distance = state.manhattanDistance(myHill, defLoc);
+			if (distance != 0)
+			{
+				Route route(myHill, defLoc, distance);
+				defRouteFromHill.push_back(route);
+			}
+		}
 	}
 	std::sort(defRouteFromHill.begin(), defRouteFromHill.end());
 
@@ -264,12 +280,15 @@ void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int ant
 		for (Location antLoc : sortedAnts)
 		{
 			int distance = state.manhattanDistance(antLoc, defLoc);
-			Route route(antLoc, defLoc, distance);
-			defenseRoute.push_back(route);
+			if (distance != 0)
+			{
+				Route route(antLoc, defLoc, distance);
+				defenseRoute.push_back(route);
+			}
 		}
 
-		ilimit +=1;
-		if (ilimit == antLimit) break;
+		ilimit++;
+		if (ilimit >= antLimit) break;
 	}
 
 	//We want to have only X percent of our ants defending
@@ -317,7 +336,7 @@ set<Location> Bot::calculateDefensePositions(Location myHill)
 			//if tile not in visited)
 			if (visited.count(nTile) == 0)
 			{
-				int distance = state.distance(myHill, nTile);
+				int distance = state.manhattanDistance(myHill, nTile);
 
 				//If not water, not enemy tile and distance < maxColonyBordersDistance
 				if (canAntMoveThere(nTile) && distance <= maxColonyBordersDistance)
@@ -372,6 +391,8 @@ void Bot::explore(vector<Location> sortedAnts)
 			for (unseenLoc = unseenTiles->begin(); unseenLoc != unseenTiles->end(); unseenLoc++)
 			{
 				int distance = state.manhattanDistance(antLoc, *unseenLoc);
+				if (distance == 0) break;
+
 				Route route = Route(antLoc, *unseenLoc, distance);
 				unseenRoutes.push_back(route);
 			}
@@ -387,7 +408,6 @@ void Bot::explore(vector<Location> sortedAnts)
 					break;
 				}
 			}
-
 		}
 	}
 }
