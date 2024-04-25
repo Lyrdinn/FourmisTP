@@ -22,8 +22,8 @@ struct Bot
     std::set<Location>* enemyTiles = new std::set<Location>();
     std::map<Location, std::set<Location> >* defenseLocationsPerHills = new std::map<Location, std::set<Location>>();
     const int antLimitVariable = 30;
-    const int nbAntDefendingPercent = 60;
-    const int maxColonyBordersDistance = 9;
+    const int nbAntDefendingPercent = 80;
+    const int maxColonyBordersDistance = 10;
 
     Bot();
 

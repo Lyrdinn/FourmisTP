@@ -38,6 +38,8 @@ void Bot::makeMoves()
 
 	state.timer.start();
 
+	//state.antList.clear();
+
 	for (size_t i = 0; i < sortedAnts.size(); i++)
 	{
 		Location currentLoc = sortedAnts[i];
@@ -116,8 +118,16 @@ void Bot::makeMoves()
 	//We attack the enemy ants if we see them
 	//attackFormation(sortedAnts);
 
-	//We explore other areas
-	explore(sortedAnts);
+	try
+	{
+		//We explore other areas
+		explore(sortedAnts);
+	}
+	catch (const std::exception& e)
+	{
+		state.bug << "CRASHED CRASHED CRASHED" << e.what() << endl;
+	}
+	
 
 	//We check for each of our hills if we currently have an ant stepping on it so we can move it further
 	getOutOfHills();
@@ -245,6 +255,8 @@ void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int ant
 {
 	state.bug << "STATE : DEFENSE FORMATION" << endl;
 
+	float timerDefense = state.timer.getTime();
+
 	map<Location, Location> defenseTarget = map<Location, Location>();
 
 	//We stock our BFS for the defense of each of our hills so that we don't have to recalculate them
@@ -259,14 +271,11 @@ void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int ant
 	vector<Route> defRouteFromHill;
 	for (Location defLoc : defenseLocation)
 	{
-		if (!state.doesContainsAnt(defLoc))
+		int distance = state.manhattanDistance(myHill, defLoc);
+		if (distance != 0)
 		{
-			int distance = state.manhattanDistance(myHill, defLoc);
-			if (distance != 0)
-			{
-				Route route(myHill, defLoc, distance);
-				defRouteFromHill.push_back(route);
-			}
+			Route route(myHill, defLoc, distance);
+			defRouteFromHill.push_back(route);
 		}
 	}
 	std::sort(defRouteFromHill.begin(), defRouteFromHill.end());
@@ -312,6 +321,8 @@ void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int ant
 
 		if (state.timer.getTime() > 450) break;
 	}
+
+	state.bug << "TIME : " << (state.timer.getTime() - timerDefense) <<endl;
 }
 
 //Uses BFS algorithm to calculate from the hill the maximum number of ants we can place in a line
@@ -325,8 +336,6 @@ set<Location> Bot::calculateDefensePositions(Location myHill)
 	while (tilesToSearch.size() > 0)
 	{
 		Location loc = tilesToSearch.front();
-
-		state.bug << "Location : r " << loc.row << " c " << loc.col << endl;
 
 		tilesToSearch.pop();
 
@@ -384,7 +393,7 @@ void Bot::explore(vector<Location> sortedAnts)
 		//if we don't have orders for this ant yet we create unseen routes
 		if (!mapContainsValue(*orders, antLoc))
 		{
-			state.bug << "antloc : " << antLoc.row << " | " << antLoc.col << endl;
+			//state.bug << "antloc : " << antLoc.row << " | " << antLoc.col << endl;
 			//search all 11 far tiles and pick the one with the highest exploreValue (if none more than 0, don't move)
 
 			vector<Route> unseenRoutes = vector<Route>();
@@ -407,7 +416,7 @@ void Bot::explore(vector<Location> sortedAnts)
 				if (state.timer.getTime() > 450) break;
 				if (doMoveLocation(route.getStart(), route.getEnd()))
 				{
-					state.bug << "route : " << route.getEnd().row << " | " << route.getEnd().col << endl;
+					//state.bug << "route : " << route.getEnd().row << " | " << route.getEnd().col << endl;
 					break;
 				}
 			}
@@ -425,6 +434,8 @@ void Bot::explore(vector<Location> sortedAnts)
 
 void Bot::getOutOfHills()
 {
+	state.bug << "STATE : GET OUT OF HILLS" << endl;
+
 	for (Location hill : state.myHills)
 	{
 		if (state.doesContainsAnt(hill) && !mapContainsValue(*orders, hill))
