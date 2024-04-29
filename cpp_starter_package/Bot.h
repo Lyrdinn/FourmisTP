@@ -20,8 +20,10 @@ struct Bot
     std::map<Location, Location>* orders = new std::map<Location, Location>();
     std::set<Location>* unseenTiles = new std::set<Location>(); //TODO : replace with bigger zones unseen
     std::set<Location>* enemyTiles = new std::set<Location>();
-    std::map<Location, std::set<Location> >* defenseLocationsPerHills = new std::map<Location, std::set<Location>>();
-    const int antLimitVariable = 20;
+    std::map<Location, std::set<Location> > defenseLocationsPerHills = std::map<Location, std::set<Location> >();
+    std::map<Location, std::vector<Route> > defensePerHillsRoutes = std::map<Location, std::vector<Route> >();
+
+    const int antLimitVariable = 50;
     const int nbAntDefendingPercent = 80;
     const int maxColonyBordersDistance = 10;
 
@@ -29,8 +31,8 @@ struct Bot
 
     void playGame();    //plays a single game of Ants
     void searchFood(std::vector<Location> sortedAnts);
-    void attackEnemy(std::vector<Location> sortedAnts);
     void attackFormation(std::vector<Location> sortedAnts);
+    void initializeDefenseRoute(Location myHill);
     void defenseFormation(std::vector<Location> sortedAnts, Location myHill, int antLimit);
     std::set<Location> calculateDefensePositions(Location myHill);
     bool canAntMoveThere(Location loc);

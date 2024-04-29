@@ -55,12 +55,12 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 
 	if (!isValid(state, dest)) 
 	{
-		state.bug << "Destination is an obstacle" << endl;
+		//state.bug << "Destination is an obstacle" << endl;
 		return empty;
 	}
 	if (isDestination(start, dest)) 
 	{
-		state.bug << "You've already reached the destination" << endl;
+		//state.bug << "You've already reached the destination" << endl;
 		return empty;
 	}	
 
@@ -177,7 +177,7 @@ vector<Node> aStar(State &state, Node &start, Node &dest)
 		}
 	}
 
-	state.bug << "Destination not found" << endl;
+	//state.bug << "Destination not found" << endl;
 	return empty;
 }
 
@@ -207,19 +207,19 @@ bool Bot::doMoveLocation(const Location &start, const Location &dest)
 	startNode.x = start.row;
 	startNode.y = start.col;
 
-	state.bug << "Start Node :" << startNode.x << " " << startNode.y << endl;
+	//state.bug << "Start Node :" << startNode.x << " " << startNode.y << endl;
 
 	Node destNode;
 	destNode.x = dest.row % state.rows;
 	destNode.y = dest.col % state.cols;
 
-	state.bug << "Dest Node :" << destNode.x << " " << destNode.y << endl;
+	//state.bug << "Dest Node :" << destNode.x << " " << destNode.y << endl;
 
 	// Get path with A-star
 	vector<Node> path = aStar(state, startNode, destNode);
 	if(path.empty()) return false;
 
-	state.bug << "Next Node :" << path[0].x << " " << path[0].y  << endl;
+	//state.bug << "Next Node :" << path[0].x << " " << path[0].y  << endl;
 
 	Location newLocation = Location(path[0].x, path[0].y);
 
