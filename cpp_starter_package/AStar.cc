@@ -191,6 +191,7 @@ bool Bot::doMoveDirection(const Location& antLoc, int direction) {
 
 	if (!state.grid[newLoc.row][newLoc.col].isWater && orders->count(newLoc) == 0)
 	{
+
 		state.makeMove(antLoc, direction);
 		orders->insert({ newLoc, antLoc });
 		return true;
@@ -224,10 +225,10 @@ bool Bot::doMoveLocation(const Location &start, const Location &dest)
 
 	// Move ant one square
 	vector<int> directions = state.getDirections(start, newLocation);
-	Ant* ant = state.FindAntWithLocation(start);
-	if (ant != nullptr) {
-		ant->futureLocation = newLocation;
-	}
+	//Ant* ant = state.FindAntWithLocation(start);
+	//if (ant != nullptr) {
+	//	ant->futureLocation = newLocation;
+	//}
 	for (int d : directions)
 	{
 	 	if (doMoveDirection(start, d))

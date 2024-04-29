@@ -24,7 +24,6 @@ struct Node
     {
         return fCost < node.fCost || (fCost == node.fCost && hCost < node.hCost);
     }
- 
 };
 
 #endif

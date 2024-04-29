@@ -42,6 +42,10 @@ void State::makeMove(const Location &loc, int direction)
     cout << "o " << loc.row << " " << loc.col << " " << CDIRECTIONS[direction] << endl;
 
     Location nLoc = getLocation(loc, direction);
+    Ant* ant = FindAntWithLocation(loc);
+    if (ant != nullptr) {
+        ant->futureLocation = nLoc;
+    }
     grid[nLoc.row][nLoc.col].ant = grid[loc.row][loc.col].ant;
     grid[loc.row][loc.col].ant = -1;
 };

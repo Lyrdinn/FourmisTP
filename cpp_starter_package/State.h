@@ -19,16 +19,14 @@
 
 
 class Ant;
-
+class Location;
 /*
     constants
 */
 const int TDIRECTIONS = 4;
 const char CDIRECTIONS[4] = {'N', 'E', 'S', 'W'};
 const int DIRECTIONS[4][2] = { {-1, 0}, {0, 1}, {1, 0}, {0, -1} };      //{N, E, S, W}
-
-class Ant;
-
+const std::vector<Location> exploPoints = { Location(16, 70), Location(15, 112), Location(14, 31), Location(34, 70), Location(40, 90), Location(32, 114), Location(9, 11), Location(16, 71), Location(15, 113), Location(14, 32), Location(34, 71), Location(40, 91), Location(32, 115), Location(9, 12) };
 /*
     struct to store current state information
 */

@@ -4,11 +4,13 @@
 class Ant
 {
 public:
+	int turnApparitionKey;
 	Location currentLocation;
 	Location futureLocation;
-	bool isExploring = false;
+	bool isExplorer = false;
+	Location exploGoal;
 
-	Ant(Location _currentLocation) : currentLocation(_currentLocation) {
-		isExploring = false;
+	Ant(int turnNum, Location _currentLocation) : turnApparitionKey(turnNum), currentLocation(_currentLocation) {
+		isExplorer = false;
 	}
 };

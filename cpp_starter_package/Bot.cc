@@ -43,11 +43,17 @@ void Bot::makeMoves()
 		Ant* foundMatchingAnt = nullptr;
 		foundMatchingAnt = state.FindAntWithFutureLocation(currentLoc);
 		if (foundMatchingAnt == nullptr) { //if no ant matches for this location, add new ant
-			state.antList.push_back(new Ant(currentLoc));
-		}
-		else {
+			for (size_t k = 0; k < state.myHills.size(); k++)
+			{
+				if (state.myHills[k].row == currentLoc.row && state.myHills[k].col == currentLoc.col) { //if there is ant at hill position
+					state.antList.push_back(new Ant(state.turn, currentLoc));
+				}
+			}
+		} else {
 			foundMatchingAnt->currentLocation = currentLoc; //update current ant location to the old future location
 		}
+
+
 	}
 
 	for (size_t i = 0; i < state.antList.size(); i++) //need to kill ant not found
@@ -65,7 +71,49 @@ void Bot::makeMoves()
 		}
 	}
 
+	state.bug << "ant number before delete double : " << state.antList.size() << endl;
+
+	for (size_t i = 0; i < state.antList.size(); i++) //check if double
+	{
+		int sameAnt = 0;
+		for (size_t j = 0; j < state.antList.size(); j++)
+		{
+			if (state.antList[j]->turnApparitionKey == state.antList[i]->turnApparitionKey) sameAnt++;
+			if (sameAnt > 1) {
+				state.bug << "delete double ant" << state.antList[j]->currentLocation.row << ", " << state.antList[j]->currentLocation.col << endl;
+				state.antList.erase(state.antList.begin() + j);
+				//j--;
+			}
+		}
+	}
+
+	for (size_t i = 0; i < state.antList.size(); i++) {
+		state.bug << state.antList[i]->currentLocation.row << " , " << state.antList[i]->currentLocation.col << endl;
+	}
+
+	for (size_t i = 0; i < exploPoints.size(); i++)
+	{
+		bool exploPointOccupied = false;
+		for (size_t j = 0; j < state.antList.size(); j++) {
+			if (exploPoints[i] == state.antList[j]->exploGoal) {
+				exploPointOccupied = true;
+				break;
+			}
+		}
+		if (!exploPointOccupied) { //point unocupied
+			for (size_t j = 0; j < state.antList.size(); j++) {
+				if (!state.antList[j]->isExplorer) {
+					state.antList[j]->isExplorer = true;
+					state.antList[j]->exploGoal = exploPoints[i];
+					break;
+				}
+			}
+		}
+	}
+
 	state.bug << "ant number : " << state.antList.size() << endl;
+	state.bug << "location number : " << sortedAnts.size() << endl;
+
 
 	//If we haven't initialized our unseen tiles yet we add all the Locations
 	if (unseenTiles->size() == 0)
@@ -279,12 +327,16 @@ void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int ant
 		Location defLoc = it->getEnd();
 		for (Location antLoc : sortedAnts)
 		{
-			int distance = state.manhattanDistance(antLoc, defLoc);
-			if (distance != 0)
-			{
-				Route route(antLoc, defLoc, distance);
-				defenseRoute.push_back(route);
+			Ant* ant = state.FindAntWithLocation(antLoc);
+			if (ant != nullptr && !ant->isExplorer) {
+				int distance = state.manhattanDistance(antLoc, defLoc);
+				if (distance != 0)
+				{
+					Route route(antLoc, defLoc, distance);
+					defenseRoute.push_back(route);
+				}
 			}
+
 		}
 
 		ilimit++;
@@ -322,8 +374,6 @@ set<Location> Bot::calculateDefensePositions(Location myHill)
 	while (tilesToSearch.size() > 0)
 	{
 		Location loc = tilesToSearch.front();
-
-		state.bug << "Location : r " << loc.row << " c " << loc.col << endl;
 
 		tilesToSearch.pop();
 
@@ -376,6 +426,59 @@ bool Bot::canAntMoveThere(Location loc)
 void Bot::explore(vector<Location> sortedAnts)
 {
 	state.bug << "STATE : EXPLORE" << endl;
+	for (size_t i = 0; i < state.antList.size(); i++) {
+		state.bug << "check : " << state.antList[i]->currentLocation.row << ", " << state.antList[i]->currentLocation.col << endl;
+	}
+
+	for (size_t i = 0; i < state.antList.size(); i++)
+	{
+		if (!mapContainsValue(*orders, state.antList[i]->currentLocation)) {
+			state.bug << "explore : " << state.antList[i]->currentLocation.row << ", " << state.antList[i]->currentLocation.col << endl;
+			if (state.antList[i]->isExplorer) {
+				int distance = state.manhattanDistance(state.antList[i]->currentLocation, state.antList[i]->exploGoal);
+				//if (distance == 0) break;
+
+				Route route = Route(state.antList[i]->currentLocation, state.antList[i]->exploGoal, distance);
+
+				if (state.timer.getTime() > 500) break;
+				if (doMoveLocation(route.getStart(), route.getEnd()))
+				{
+					state.bug << "route : " << route.getEnd().row << " | " << route.getEnd().col << endl;
+					//break;
+				}
+			}
+			else {
+				vector<Route> unseenRoutes = vector<Route>();
+
+				set<Location>::iterator unseenLoc;
+				//For each of the unseen locations in our map we create a route
+				for (unseenLoc = unseenTiles->begin(); unseenLoc != unseenTiles->end(); unseenLoc++)
+				{
+					int distance = state.manhattanDistance(state.antList[i]->currentLocation, *unseenLoc);
+					if (distance == 0) break;
+
+					Route route = Route(state.antList[i]->currentLocation, *unseenLoc, distance);
+					unseenRoutes.push_back(route);
+				}
+
+				//We sort the route by the shortest one to explore the most nearby place
+				std::sort(unseenRoutes.begin(), unseenRoutes.end());
+				for (Route route : unseenRoutes)
+				{
+					if (state.timer.getTime() > 500) break;
+					if (doMoveLocation(route.getStart(), route.getEnd()))
+					{
+						state.bug << "route : " << route.getEnd().row << " | " << route.getEnd().col << endl;
+						break;
+					}
+				}
+			}
+		}
+		else {
+			state.bug << "can't explore : " << state.antList[i]->currentLocation.row << ", " << state.antList[i]->currentLocation.col << endl;
+		}
+	}
+	return;
 	for (Location antLoc : sortedAnts)
 	{
 		//if we don't have orders for this ant yet we create unseen routes
