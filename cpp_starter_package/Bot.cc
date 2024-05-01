@@ -38,8 +38,79 @@ void Bot::makeMoves()
 
 	state.timer.start();
 
-	//state.antList.clear();
+	antTargeting(sortedAnts);
+	
+	//If we haven't initialized our unseen tiles yet we add all the Locations
+	if (unseenTiles->size() == 0)
+	{
+		for (int row = 0; row < state.rows; row++)
+		{
+			for (int col = 0; col < state.cols; col++)
+			{
+				unseenTiles->insert(Location(row, col));
+			}
+		}
+	}
 
+	//We remove every tiles we can see in the map
+	set<Location>::iterator it;
+	for (it = unseenTiles->begin(); it != unseenTiles -> end();)
+	{
+		if (state.grid[it->row][it->col].isVisible)
+		{
+			state.grid[it->row][it->col].exploreValue = 0;
+			it = unseenTiles->erase(it);
+		}
+		else
+		{
+			if (state.grid[it->row][it->col].exploreValue < 10)
+				state.grid[it->row][it->col].exploreValue++;
+			++it;
+			
+		}
+	}
+
+	//We add our hills to our orders so that our ants don't go there.
+	for (Location hill : state.myHills)
+	{
+		orders->insert({ hill, Location(-1,-1) });
+	}
+	
+	//We Search for food
+	searchFood(sortedAnts);
+
+	determinedExploration();
+
+	//We check for each of our hills if we currently have an ant stepping on it so we can move it further
+	getOutOfHills();
+
+	if (state.myAnts.size() >= 5)
+	{
+		//We assign ants to defend our base
+		defenseFormation(sortedAnts, state.myHills.front(), state.myAnts.size() + antLimitVariable);
+	}
+
+	//We attack the enemy ants if we see them
+	attackFormation(sortedAnts);
+
+	try
+	{
+		if (state.myAnts.size() <= 150 && state.timer.getTime() < 500)
+		//We explore other areas
+		explore(sortedAnts);
+	}
+	catch (const std::exception& e)
+	{
+		state.bug << "CRASHED CRASHED CRASHED" << e.what() << endl;
+	}
+	
+
+
+
+	state.bug << "time taken: " << state.timer.getTime() << "ms" << endl << endl;
+};
+
+void Bot::antTargeting(vector<Location> sortedAnts) {
 	for (size_t i = 0; i < sortedAnts.size(); i++)
 	{
 		Location currentLoc = sortedAnts[i];
@@ -52,34 +123,26 @@ void Bot::makeMoves()
 					state.antList.push_back(new Ant(state.turn, currentLoc));
 				}
 			}
-		} else {
+		}
+		else {
 			foundMatchingAnt->currentLocation = currentLoc; //update current ant location to the old future location
 		}
-
-
 	}
 
 	for (size_t i = 0; i < state.antList.size(); i++) //need to kill ant not found
 	{
-		bool found = false;
-		for (size_t j = 0; j < sortedAnts.size(); j++)
-		{
-			if (state.antList[i]->currentLocation == sortedAnts[j]) {
-				found = true;
-				break;
-			}
-		}
-		if (!found) {
+		bool foundMatchingLocation = state.AntIsInLocationList(state.antList[i]);
+		if (!foundMatchingLocation) {
 			state.antList.erase(state.antList.begin() + i);
 		}
 	}
 
 	state.bug << "ant number before delete double : " << state.antList.size() << endl;
 
-	for (size_t i = 0; i < state.antList.size(); i++) //check if double
+	for (int i = 0; i < state.antList.size(); i++) //check if double
 	{
 		int sameAnt = 0;
-		for (size_t j = 0; j < state.antList.size(); j++)
+		for (int j = 0; j < state.antList.size(); j++)
 		{
 			if (state.antList[j]->currentLocation == state.antList[i]->currentLocation) sameAnt++;
 			if (sameAnt > 1) {
@@ -117,73 +180,7 @@ void Bot::makeMoves()
 
 	state.bug << "ant number : " << state.antList.size() << endl;
 	state.bug << "location number : " << sortedAnts.size() << endl;
-
-
-	//If we haven't initialized our unseen tiles yet we add all the Locations
-	if (unseenTiles->size() == 0)
-	{
-		for (int row = 0; row < state.rows; row++)
-		{
-			for (int col = 0; col < state.cols; col++)
-			{
-				unseenTiles->insert(Location(row, col));
-			}
-		}
-	}
-
-	//We remove every tiles we can see in the map
-	set<Location>::iterator it;
-	for (it = unseenTiles->begin(); it != unseenTiles -> end();)
-	{
-		if (state.grid[it->row][it->col].isVisible)
-		{
-			state.grid[it->row][it->col].exploreValue = 0;
-			it = unseenTiles->erase(it);
-		}
-		else
-		{
-			if (state.grid[it->row][it->col].exploreValue < 10)
-				state.grid[it->row][it->col].exploreValue++;
-			++it;
-			
-		}
-	}
-
-	//We add our hills to our orders so that our ants don't go there.
-	for (Location hill : state.myHills)
-	{
-		orders->insert({ hill, Location(-1,-1) });
-	}
-
-	if (state.myAnts.size() >= 35)
-	{
-		//We assign ants to defend our base
-		defenseFormation(sortedAnts, state.myHills.front(), state.myAnts.size() + antLimitVariable);
-	}
-
-	//We Search for food
-	searchFood(sortedAnts);
-
-	//We attack the enemy ants if we see them
-	//attackFormation(sortedAnts);
-
-	try
-	{
-		if (state.myAnts.size() <= 100 && state.timer.getTime() < 450)
-		//We explore other areas
-		explore(sortedAnts);
-	}
-	catch (const std::exception& e)
-	{
-		state.bug << "CRASHED CRASHED CRASHED" << e.what() << endl;
-	}
-	
-
-	//We check for each of our hills if we currently have an ant stepping on it so we can move it further
-	getOutOfHills();
-
-	state.bug << "time taken: " << state.timer.getTime() << "ms" << endl << endl;
-};
+}
 
 //We tell each of our ants to go to the closest food visible
 void Bot::searchFood(vector<Location> sortedAnts)
@@ -352,19 +349,21 @@ void Bot::defenseFormation(vector<Location> sortedAnts, Location myHill, int ant
 		{
 
 			Location defLoc = it->getEnd();
-			for (Location antLoc : sortedAnts)
+			int defenseNum = 0;
+			for (size_t i = (sortedAnts.size() - 1); i > 0; i--)
 			{
-				Ant* ant = state.FindAntWithLocation(antLoc);
+				defenseNum++;
+				if (defenseNum > 50) break;
+				Ant* ant = state.FindAntWithLocation(sortedAnts[i]);
 				if (ant != nullptr && !ant->isExplorer) {
-					int distance = state.manhattanDistance(antLoc, defLoc);
+					int distance = state.manhattanDistance(sortedAnts[i], defLoc);
 					if (distance != 0)
 					{
-						Route route(antLoc, defLoc, distance);
+						Route route(sortedAnts[i], defLoc, distance);
 						defenseRoute.push_back(route);
 					}
 				}
 			}
-
 		}
 
 		ilimit++;
@@ -467,20 +466,7 @@ void Bot::explore(vector<Location> sortedAnts)
 	{
 		if (!mapContainsValue(*orders, state.antList[i]->currentLocation)) {
 			state.bug << "explore : " << state.antList[i]->currentLocation.row << ", " << state.antList[i]->currentLocation.col << endl;
-			if (state.antList[i]->isExplorer) {
-				int distance = state.manhattanDistance(state.antList[i]->currentLocation, state.antList[i]->exploGoal);
-				//if (distance == 0) break;
-
-				Route route = Route(state.antList[i]->currentLocation, state.antList[i]->exploGoal, distance);
-
-				if (state.timer.getTime() > 500) break;
-				if (doMoveLocation(route.getStart(), route.getEnd()))
-				{
-					state.bug << "route : " << route.getEnd().row << " | " << route.getEnd().col << endl;
-					//break;
-				}
-			}
-			else {
+			if (!state.antList[i]->isExplorer) {
 				vector<Route> unseenRoutes = vector<Route>();
 
 				set<Location>::iterator unseenLoc;
@@ -548,14 +534,28 @@ void Bot::explore(vector<Location> sortedAnts)
 		}
 	}
 }
-//
-//void Bot::breathFirstSearch() {
-//
-//	vector<Location> unexploredLocations = vector<Location>();
-//vector<Location> exploredLocations = vector<Location>();
 
-//unexploredLocations.push_back(antLoc);
-//}
+void Bot::determinedExploration() {
+	for (size_t i = 0; i < state.antList.size(); i++)
+	{
+		if (!mapContainsValue(*orders, state.antList[i]->currentLocation)) {
+			state.bug << "explore : " << state.antList[i]->currentLocation.row << ", " << state.antList[i]->currentLocation.col << endl;
+			if (state.antList[i]->isExplorer) {
+				int distance = state.manhattanDistance(state.antList[i]->currentLocation, state.antList[i]->exploGoal);
+				//if (distance == 0) break;
+
+				Route route = Route(state.antList[i]->currentLocation, state.antList[i]->exploGoal, distance);
+
+				if (state.timer.getTime() > 500) break;
+				if (doMoveLocation(route.getStart(), route.getEnd()))
+				{
+					state.bug << "route : " << route.getEnd().row << " | " << route.getEnd().col << endl;
+					//break;
+				}
+			}
+		}
+	}
+}
 
 void Bot::getOutOfHills()
 {
@@ -563,11 +563,22 @@ void Bot::getOutOfHills()
 
 	for (Location hill : state.myHills)
 	{
-		if (state.doesContainsAnt(hill) && !mapContainsValue(*orders, hill))
+		if (state.doesContainsAnt(hill) && !mapContainsValue(*orders, hill)) //if ant doesn't already have an order in which case it will go away anyway
 		{
 			for (int d = 0; d < TDIRECTIONS; d++)
 			{
+				if (state.timer.getTime() > 500) break;
 				//We check if we have an ant at the new location and if not we can move
+				if (state.doesContainsAnt(state.getLocation(hill, d))) {
+					if (!mapContainsValue(*orders, state.getLocation(hill, d))) {
+						for (int e = 0; e < TDIRECTIONS; e++) {
+							if (state.timer.getTime() > 500) break;
+							if (!state.doesContainsAnt(state.getLocation(state.getLocation(hill, d), e)) && doMoveDirection(state.getLocation(hill, d), e)) {
+								break;
+							}
+						}
+					}
+				}
 				if (!state.doesContainsAnt(state.getLocation(hill, d)) && doMoveDirection(hill, d))
 				{
 					break;

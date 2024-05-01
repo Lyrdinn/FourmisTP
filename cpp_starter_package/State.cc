@@ -75,6 +75,18 @@ Ant* State::FindAntWithFutureLocation(const Location& loc) {
     return ant;
 }
 
+bool State::AntIsInLocationList(Ant* ant) {
+    for (size_t i = 0; i < myAnts.size(); i++)
+    {
+        //bug << "row : " << antList[i]->futureLocation.row << " , col : " << antList[i]->currentLocation.col << endl;
+        if (ant->currentLocation == myAnts[i]) {
+            return true;
+            break;
+        }
+    }
+    return false;
+}
+
 //returns the euclidean distance between two locations with the edges wrapped
 double State::distance(const Location &loc1, const Location &loc2)
 {

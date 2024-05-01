@@ -30,6 +30,7 @@ struct Bot
     Bot();
 
     void playGame();    //plays a single game of Ants
+    void antTargeting(std::vector<Location> sortedAnts);
     void searchFood(std::vector<Location> sortedAnts);
     void attackFormation(std::vector<Location> sortedAnts);
     void initializeDefenseRoute(Location myHill);
@@ -38,6 +39,7 @@ struct Bot
     bool canAntMoveThere(Location loc);
     std::vector<Location> getAllLocationsBetween(int x0, int x1, int y0, int y1);
     void explore(std::vector<Location> sortedAnts);
+    void determinedExploration();
 
     bool doMoveDirection(const Location& antLoc, int direction);
     bool doMoveLocation(const Location& start, const Location& dest);
