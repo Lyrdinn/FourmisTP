@@ -11,17 +11,17 @@ Contest made in a team of 3 :  [Marina SECORD](https://github.com/Lyrdinn/), [Ni
 
 <p>
 The goal of this project was to develop an AI that would control a colony of ants. The contest consisted of placing 6 groups of ants inside a map and then
-see which one would win. To win points you have to defend your colony as well as attack the others, ants need to search for food to expand their numbers.
+see which one would win. To gain points you have to defend your colony as well as attack the others, ants need to search for food to expand their numbers.
 
 We finished with the 3rd place out of 6.
   
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Implementation :
- - Marina Secord : Framework integration and ants' defense formation using BSP search
+ - Marina Secord : Basic code for all actions at the start of project and ants' defense formation using BSP search
  - Nino Sandlarz : Ants' pathfinding using A star
- - Alvina : Ant's pathfinding using A star and basic colony attack
+ - Alvina Damasio--Razafiarizaka : Ant's pathfinding using A star and basic colony attack
   
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Strategy :
-  Our strategy was to develop our ants as fast as possible and then have a big pack of ants defend our colony's outer walls while sending other
-  ants attacking the others.
+  Our strategy was to develop our ants as fast as possible by having them searching for food until we obtained a certain number of ants. Then we leave a big pack of ants defend our colony's 
+  outer walls while sending other ants to attack the others.
